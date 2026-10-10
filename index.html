@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#FAF8F5">
   <meta name="description" content="Éden Experiências Gastronômicas — gestão de coquetéis, encontros corporativos e experiências memoráveis.">
-  <title>Éden Experiências Gastronômicas · Gestão Online</title>
+  <title>Éden · Receitas, Fotos e Orçamentos</title>
 
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;450;500;550;600&display=swap" rel="stylesheet">
@@ -166,6 +166,156 @@ table.data td strong{font-weight:500;color:#405565}
 .doc-brand .eden-logo{width:225px;max-width:100%;height:auto;margin:0 0 14px}
 @media(max-width:760px){.sidebar .brand{padding:0 3px 13px;margin:0}.sidebar .eden-logo{width:145px;margin:0}.doc-brand .eden-logo{width:185px}}
 
+
+/* ÉDEN MOBILE — operabilidade, leitura e ergonomia (v3). */
+.eden-bottom-nav,.eden-sheet-backdrop,.eden-mobile-funnel,.eden-mobile-calendar{display:none}
+/* A logo original é azul-marinho; o fundo claro evita perda de contraste no login. */
+.auth-left{background:#f1e8df!important;color:#2d4557!important}
+.auth-left h1{color:#314b5e!important}
+.auth-left small{color:#867e75!important}
+@media(max-width:760px){
+ html{scroll-padding-top:88px}body{overflow-x:hidden}
+ .layout{min-width:0}.main{min-width:0}
+ .sidebar{position:sticky;top:0;z-index:30;background:rgba(250,248,245,.98);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:8px 17px;border-bottom:1px solid #e9e2dc;box-shadow:0 2px 15px #26394905}
+ .sidebar .brand{display:flex;align-items:center;justify-content:center;padding:0!important;margin:0!important;min-height:47px}
+ .sidebar .eden-logo{width:126px!important;height:auto;margin:auto!important}
+ .sidebar .nav-wrap,.sidebar .sidebar-foot{display:none!important}
+ .topbar{min-height:54px;padding:10px 18px;border-bottom:0;gap:10px}
+ .top-title{font-size:17px;letter-spacing:-.55px;margin-top:1px}
+ .top-eyebrow{font-size:8px;letter-spacing:1px}
+ .topbar .top-right{flex-shrink:0}.topbar .top-right .cloud-chip{font-size:0!important;padding:0!important;width:8px;height:8px;border:0;border-radius:50%;background:#98a99e}
+ .topbar .top-right .cloud-chip:first-letter{font-size:0}
+ .topbar .logout-top{display:none!important}
+ .content{padding:10px 15px calc(114px + env(safe-area-inset-bottom));max-width:600px;margin:0 auto}
+ .hero{padding:24px 22px;border-radius:12px;margin-bottom:15px}.hero h1{font-size:26px}.hero .btn{min-height:44px}
+ .metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0}
+ .metric{padding:15px 12px;min-height:103px}.metric .value{font-size:clamp(15px,4.4vw,20px);line-height:1.22;letter-spacing:-.65px;overflow-wrap:anywhere}
+ .metric .meta{gap:5px;font-size:10px}.metric .hint{font-size:9.5px;line-height:1.45}
+ .columns-2{grid-template-columns:1fr;gap:12px}.panel{padding:16px}.list-row{gap:9px}
+ .toolbar{align-items:stretch;gap:12px;margin:16px 0 13px}.toolbar h2{font-size:19px;line-height:1.3}.toolbar p{line-height:1.55;font-size:10px;margin-top:5px}
+ .toolbar>.button-group{display:flex;width:100%;gap:8px}.toolbar>.button-group>.btn{flex:1 1 130px;white-space:normal;line-height:1.3}
+ .btn{min-height:44px;padding:11px 14px;font-size:11px}.btn-xs{min-height:40px}
+ .row-action{min-height:34px;padding:7px 8px}.list-right .row-action{min-height:32px}
+ .filters{gap:9px}.filters input,.filters select{max-width:100%;flex:1 1 100%;font-size:16px}
+ .filters>.btn{flex:1}.sub-tabs{display:flex;overflow-x:auto;flex-wrap:nowrap;gap:7px;scroll-snap-type:x proximity;padding:2px 0 10px;margin-bottom:11px}
+ .sub-tabs button{white-space:nowrap;flex:0 0 auto;min-height:42px;scroll-snap-align:start;font-size:11px}
+ input,select,textarea{min-height:46px;font-size:16px!important;max-width:100%}
+ input[type=checkbox],input[type=radio]{min-height:20px;width:20px;flex:0 0 20px}
+ .form-grid{grid-template-columns:1fr!important}.form-grid .field{grid-column:1/-1!important;min-width:0}
+ .field label,label{line-height:1.5}.detail-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.detail-tile{padding:13px 12px}.detail-tile strong{font-size:clamp(14px,4vw,17px);overflow-wrap:anywhere}
+ .footer-note{margin-top:25px;font-size:9px}
+ .eden-bottom-nav{position:fixed;z-index:70;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:rgba(253,251,248,.98);border-top:1px solid #e9e3dc;box-shadow:0 -6px 26px #25374812;padding:7px 7px calc(7px + env(safe-area-inset-bottom));-webkit-backdrop-filter:blur(15px);backdrop-filter:blur(15px)}
+ .eden-bottom-link{background:transparent;border:0;color:#9b9a96;min-width:0;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-radius:9px;padding:4px 1px;font:500 9px 'Montserrat',sans-serif}
+ .eden-bottom-link.active{color:#29475a;background:#f1ece6}.eden-bottom-icon{height:22px;display:grid;place-items:center}
+ .eden-bottom-add .eden-bottom-icon{background:#2d4a5e;color:#fff;height:35px;width:35px;border-radius:13px;margin-top:-12px;box-shadow:0 4px 12px #2f495b2b}.eden-bottom-add.active .eden-bottom-icon{background:#1f3547}
+ .eden-bottom-link:focus-visible,.eden-sheet-nav:focus-visible,.eden-opp-open:focus-visible{outline:2px solid #315d7c;outline-offset:-2px}
+ .eden-sheet-backdrop{display:block;position:fixed;z-index:65;inset:0;background:rgba(30,43,52,.38);padding:0;animation:edenFade .12s ease}
+ .eden-sheet{position:absolute;bottom:calc(67px + env(safe-area-inset-bottom));left:9px;right:9px;max-height:min(76dvh,670px);display:flex;flex-direction:column;border:1px solid #ece4dd;border-radius:18px 18px 10px 10px;box-shadow:0 18px 50px #1e344c36;background:#fffdfa;overflow:hidden;animation:edenSheet .16s ease}
+ .eden-sheet-grip{height:4px;width:35px;background:#dbd6cf;border-radius:5px;margin:10px auto 1px;flex-shrink:0}
+ .eden-sheet-header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 19px 9px;border-bottom:1px solid #f0ebe5;color:#344d5d}
+ .eden-sheet-header strong{font-size:14px;font-weight:500}.eden-sheet-close{border:0;background:#f4efe9;border-radius:50%;height:37px;width:37px;font-size:24px;line-height:1;color:#5b6b75}
+ .eden-sheet-content{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:8px 13px 19px}
+ .eden-sheet-section{font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:#ac9887;margin:15px 7px 11px}
+ .eden-sheet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .eden-sheet-nav{border:1px solid #eee8e0;border-radius:10px;display:flex;align-items:center;gap:9px;text-align:left;min-height:54px;background:#fbfaf8;padding:11px 10px;color:#4d6170;font:500 10px 'Montserrat',sans-serif}
+ .eden-sheet-nav.active{background:#f0ebe4;border-color:#e3d9ca}.eden-sheet-nav svg{flex:0 0 18px;height:18px;width:18px;color:#7f918f}.eden-sheet-nav span:nth-child(2){flex:1;line-height:1.45}
+ .eden-sheet-plus{font-size:19px;color:#78909a}.eden-sheet-account{font-size:11px;color:#7a8790;padding:2px 7px 12px;overflow-wrap:anywhere}
+ .eden-sheet-actions{display:flex;gap:8px;flex-wrap:wrap}.eden-sheet-actions button{flex:1;min-height:40px;padding:10px 8px;border:1px solid #e8e2da;background:#f8f6f2;border-radius:8px;color:#596c78;font-size:10px}
+ .eden-adaptive-table,.eden-adaptive-table tbody,.eden-adaptive-table tr,.eden-adaptive-table td{display:block!important;width:100%!important;min-width:0!important}
+ .data-wrap{overflow:visible!important;background:transparent!important;border:0!important;border-radius:0!important}
+ .eden-adaptive-table thead{display:none!important}
+ .eden-adaptive-table tbody{display:grid!important;grid-template-columns:1fr;gap:10px}
+ .eden-adaptive-table tbody tr{border:1px solid #eae5df;background:#fff;border-radius:11px;overflow:hidden;padding:7px 14px;box-shadow:0 2px 10px #23394905}
+ .eden-adaptive-table tbody td{padding:10px 0!important;border:0!important;border-bottom:1px solid #f2eee9!important;font-size:12px!important;line-height:1.45;min-height:32px;overflow-wrap:anywhere}
+ .eden-adaptive-table tbody td:last-child{border-bottom:0!important}
+ .eden-adaptive-table tbody td:not(:first-child):not(.eden-empty-row){display:flex!important;align-items:center;justify-content:space-between;gap:13px;flex-wrap:wrap;text-align:right}
+ .eden-adaptive-table tbody td::before{content:attr(data-label);font-weight:500;color:#9b9c9c;font-size:10px;text-align:left;flex:0 0 36%;max-width:42%;line-height:1.4}
+ .eden-adaptive-table tbody td:first-child::before{display:block;max-width:none;margin-bottom:5px}
+ .eden-adaptive-table tbody td:not(:first-child)>div{max-width:100%}
+ .eden-adaptive-table tbody td.eden-empty-row{padding:7px 0!important}.eden-adaptive-table tbody td.eden-empty-row::before{display:none}
+ .eden-adaptive-table tbody td:has(.row-action){justify-content:flex-end!important;gap:6px!important}
+ .eden-adaptive-table tbody td:has(.row-action)::before{margin-right:auto}
+ .eden-adaptive-table .btn{min-height:40px}.eden-adaptive-table .row-action{border:1px solid #ebe6e0;background:#faf9f6;border-radius:7px;padding:9px 11px;min-height:40px}
+ .eden-mobile-funnel{display:block}.kanban{display:none!important}
+ .eden-filter-label{display:block;font-size:11px;margin:0 0 7px;color:#778790}.eden-mobile-funnel>select{margin-bottom:12px;border-color:#e4ddd4;background:#fff}
+ .eden-mobile-results{display:grid;gap:10px}.eden-mobile-opportunity{background:#fff;border:1px solid #ebe5dd;border-radius:12px;padding:16px}
+ .eden-mobile-opportunity-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.eden-mobile-opportunity strong{display:block;font-size:12px;font-weight:500;color:#3c5667;margin-top:7px;line-height:1.55}.eden-opp-amount{white-space:nowrap;font-size:11px;color:#456273}
+ .eden-opp-details{display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:#8999a1;margin:10px 0 13px;font-size:10px}
+ .eden-opp-stage-label{display:block;font-size:10px;color:#8d989f;margin-bottom:7px}.eden-opp-select{min-height:44px!important;font-size:14px!important;background:#faf9f7}
+ .eden-opp-open{margin-top:10px;display:flex;align-items:center;justify-content:space-between;width:100%;border:0;border-radius:7px;background:#f0ede8;min-height:43px;padding:10px 14px;text-align:left;color:#3c586d;font-size:11px;font-weight:500}
+ .eden-mobile-calendar{display:block;padding:10px 13px 16px}.calendar{display:none!important}
+ .calendar-bar{gap:8px;flex-wrap:nowrap}.calendar-title{min-width:0;font-size:15px;line-height:1.25}.calendar-bar .btn{min-width:39px;min-height:39px;padding:5px}.calendar-bar .btn-xs{font-size:15px}
+ .panel:has(.eden-mobile-calendar)>.panel-top{display:flex;flex-wrap:wrap;gap:8px;padding:15px!important}.panel:has(.eden-mobile-calendar)>.panel-top>button{min-height:38px}
+ .eden-calendar-list-item{width:100%;display:flex;align-items:center;gap:12px;text-align:left;border:0;border-bottom:1px solid #eee9e3;background:#fff;padding:12px 2px;color:#3c5364}
+ .eden-calendar-list-item:last-child{border:0}.eden-calendar-date{width:51px;min-width:51px;min-height:57px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f4f0e9;border-radius:9px}
+ .eden-calendar-date strong{font-size:20px;font-weight:400;line-height:1.2}.eden-calendar-date small{font-size:9px;color:#91877d;margin-top:3px;text-transform:uppercase}
+ .eden-calendar-summary{flex:1;min-width:0;display:flex;align-items:flex-start;flex-direction:column;gap:6px}.eden-calendar-summary strong{font-size:11px;font-weight:500;line-height:1.35}.eden-calendar-summary small{font-size:10px;color:#909aa0;line-height:1.4}.eden-calendar-arrow{font-size:24px;color:#bbb1a7}
+ .modal-back{align-items:flex-end;padding:0!important;z-index:90}
+ .modal{width:100%!important;max-width:100%!important;max-height:100dvh!important;height:auto;max-height:min(94dvh,900px)!important;margin:0;border-radius:20px 20px 0 0!important;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 -10px 40px #192d4036}
+ .modal-head{padding:17px 19px!important;flex-shrink:0;border-bottom:1px solid #efeae4}
+ .modal-head h2{font-size:18px}.icon-close{width:40px;height:40px;min-width:40px}
+ .modal-body{overflow-y:auto!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:17px 19px calc(18px + env(safe-area-inset-bottom))!important}
+ .modal-foot{position:sticky;bottom:calc(-18px - env(safe-area-inset-bottom));z-index:5;display:flex;flex-wrap:wrap;gap:9px;background:#fffdfa;border-top:1px solid #efeae4;padding:14px 10px calc(15px + env(safe-area-inset-bottom))!important;margin:20px -10px calc(-18px - env(safe-area-inset-bottom))!important;box-shadow:0 -7px 16px #1d314509}
+ .modal-foot .btn{flex:1 1 115px;white-space:normal;min-height:44px}
+ .auth-left{min-height:155px;padding:20px!important}.auth-left h1{display:none}.auth-left small{display:none}.auth-mark{display:flex;justify-content:center}.auth-mark .eden-logo{width:170px;max-width:70vw}
+ .auth-right{padding:22px 18px calc(30px + env(safe-area-inset-bottom))}.auth-card h2{font-size:25px}.auth-card .btn{width:100%;min-height:48px}.auth-card input{font-size:16px!important}
+ #toast{bottom:calc(83px + env(safe-area-inset-bottom))!important;left:12px!important;right:12px!important;z-index:110!important}
+ .doc-sheet{max-width:100%!important;width:100%!important;overflow-wrap:anywhere}.doc-item{min-width:0}
+ @keyframes edenSheet{from{transform:translateY(15px);opacity:.7}to{transform:translateY(0);opacity:1}}
+ @keyframes edenFade{from{opacity:0}to{opacity:1}}
+}
+@media(max-width:370px){.eden-sheet-grid{grid-template-columns:1fr 1fr}.content{padding-inline:12px}.eden-sheet-nav{padding:8px 7px;font-size:9px}.eden-bottom-label{font-size:8px}.metric .value{font-size:15px}}
+@media print{.eden-bottom-nav,.eden-sheet-backdrop,.eden-mobile-funnel,.eden-mobile-calendar{display:none!important}}
+
+/* ÉDEN V5 · Orçamento visual com receitas e fotografias */
+:root{font-family:'Montserrat',Arial,sans-serif}
+.quote-intro{border-radius:12px;background:#f8f5f0;border:1px solid #eee7dd;padding:17px 18px;margin-bottom:17px}
+.quote-kicker{font-size:9px;color:#9b8269;letter-spacing:1.7px;font-weight:700}
+.quote-intro p{margin:8px 0 0;color:#6e7c86;font-size:11px;line-height:1.8}
+.quote-selection-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:25px 0 12px}
+.quote-selection-head h3{font-weight:600;font-size:13px;margin:0 0 4px;color:#304b64}
+.quote-selection-head p{font-size:10px;color:#8d99a3;margin:0}
+#quote-selected-count{white-space:nowrap;border-radius:50px;background:#eae6dd;font-size:10px;padding:8px 10px;color:#627486}
+.quote-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.quote-choice{display:flex;gap:11px;position:relative;align-items:center;border:1px solid #e9e4dc;border-radius:10px;padding:10px;background:#fff;min-height:95px;cursor:pointer;transition:.15s;margin:0}
+.quote-choice.selected{border-color:#607c94;background:#f8fafb;box-shadow:0 0 0 1px #607c9425}
+.quote-choice>input[type=checkbox]{flex:none;width:18px;min-width:18px;min-height:18px;height:18px;accent-color:#294a67;margin:0}
+.quote-choice-preview{width:67px;height:70px;flex:0 0 67px;overflow:hidden;border-radius:6px;background:#f4efe8}
+.quote-choice-photo{width:100%;height:100%;object-fit:cover;display:block}
+.quote-choice-info{min-width:0;flex:1;display:flex;flex-direction:column;gap:5px}
+.quote-choice-category{font-size:9px!important;text-transform:uppercase;color:#9c8a77;letter-spacing:.7px;font-weight:650}
+.quote-choice-info strong{font-size:11px;color:#26445e;line-height:1.4;overflow-wrap:anywhere}
+.quote-choice-info small{font-size:10px;font-weight:400;color:#9ca4a9;line-height:1.4;max-height:28px;overflow:hidden}
+.quote-choice-qty{min-width:60px;width:69px;display:flex;flex-direction:column;gap:6px}
+.quote-choice-qty span{font-size:9px;color:#7e8b98;font-weight:500}
+.quote-choice-qty input{min-height:34px;height:34px;padding:6px;text-align:center;border-radius:6px}
+.quote-footnote{font-size:10px;line-height:1.8;color:#8b9ca5;background:#faf7f2;border:1px solid #eee9e2;border-radius:8px;padding:12px;margin-top:14px}
+.quote-modal-foot{margin:20px -27px -24px;gap:10px}
+.quote-detail-row{justify-content:flex-start;align-items:center}
+.quote-detail-row>div:nth-child(2){flex:1;min-width:0}
+.quote-detail-thumb{flex:0 0 66px;width:66px;height:66px;border-radius:6px;object-fit:cover;overflow:hidden;background:#f5f0e8}
+.quote-doc-item{display:flex;align-items:center;gap:17px;min-height:110px;padding:17px 0;break-inside:avoid;page-break-inside:avoid;border-bottom:1px solid #eee8e2}
+.quote-doc-photo{width:110px;height:88px;flex:0 0 110px;border-radius:5px;object-fit:cover;background:#f4eee6}
+.quote-doc-copy{min-width:0;flex:1}
+.quote-doc-kind{display:block;font-size:9px!important;color:#a18e77;text-transform:uppercase;letter-spacing:1.1px;margin:0 0 7px}
+.quote-doc-copy strong{display:block;font-size:13px;line-height:1.45;color:#193b5e;font-weight:600}
+.quote-doc-copy p{line-height:1.65!important;font-size:11px!important;color:#7d8790!important;margin-top:6px!important}
+@media(max-width:760px){
+ .quote-choices{grid-template-columns:1fr}
+ .quote-choice{padding:9px;gap:9px;min-height:81px}
+ .quote-choice-preview{width:58px;height:65px;flex-basis:58px}
+ .quote-choice-qty{width:58px;min-width:58px}
+ .quote-choice-info small{display:none}
+ .quote-selection-head{align-items:flex-start}
+ .quote-doc-item{gap:12px;min-height:90px}
+ .quote-doc-photo{flex-basis:80px;width:80px;height:80px}
+ .quote-doc-copy strong{font-size:12px}
+ .quote-detail-row{flex-wrap:wrap}
+ .quote-modal-foot{position:sticky;bottom:-24px;background:#fff;border-top:1px solid #ede6db;z-index:2}
+}
+@media(max-width:350px){.quote-choice-info strong{font-size:10px}.quote-choice-preview{width:47px;flex-basis:47px}}
+@media print{.quote-doc-item{break-inside:avoid;page-break-inside:avoid}.quote-doc-photo{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -176,7 +326,63 @@ table.data td strong{font-weight:500;color:#405565}
 .logout-top{background:#fff;border:1px solid #e6e0d7;border-radius:8px;min-width:34px;min-height:34px;font-size:19px;color:#50687c;display:grid;place-items:center}
 .logout-top:hover{background:#f2eee9}
 @media(max-width:760px){.top-right .avatar{display:none}.top-right{gap:7px}.top-right .cloud-chip{font-size:9px;padding:5px 7px}.logout-top{min-width:31px;min-height:31px}}
-  </style>
+  
+/* ÉDEN V4 · Organização de receitas e fotografia, responsivo e editorial */
+.eden-recipe-filters{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 15px}
+.eden-recipe-filter{font:500 11px Montserrat,Arial,sans-serif;color:#53677c;background:#fff;border:1px solid #e8e1d8;border-radius:100px;padding:10px 13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background .2s,border-color .2s}
+.eden-recipe-filter span{opacity:.55;font-size:10px}
+.eden-recipe-filter.active{background:#193b5e;color:#fff;border-color:#193b5e}
+.eden-recipe-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.recipe-card-info{padding:17px 18px 18px;display:flex;flex:1;flex-direction:column}
+.eden-recipe-card h3{margin:8px 0 5px;line-height:1.4}
+.eden-recipe-card .recipe-card-info>p{margin:0 0 13px;line-height:1.7}
+.eden-recipe-card footer{margin-top:auto;padding-top:16px}
+.recipe-cover{display:flex;width:100%;height:172px;object-fit:cover;object-position:center;background:#f4f0e9;border-bottom:1px solid #eee8df}
+.recipe-cover-empty,.recipe-photo-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:#b2a79b;background:#f3eee7}
+.recipe-cover-empty span,.recipe-photo-empty span{font-size:27px;font-weight:300;color:#bbad9b}
+.recipe-cover-empty small,.recipe-photo-empty small{font-size:10px;letter-spacing:.2px}
+.recipe-cost-tile{padding:11px;border-radius:7px;background:#fbfaf8;margin-top:auto}
+.recipe-cost-tile strong{font-size:19px;margin:4px 0 3px}
+.recipe-photo-field{margin-top:20px;padding-top:20px;border-top:1px solid #eee8e0}
+.recipe-photo-intro{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;margin-bottom:11px}
+.recipe-photo-intro label{font-size:12px;font-weight:600;color:#324b62}
+.recipe-photo-intro span{color:#9ba3aa;font-size:10px}
+.recipe-photo-frame{display:grid;grid-template-columns:minmax(130px,190px) minmax(0,1fr);gap:17px;align-items:center;border:1px solid #eae5dd;border-radius:10px;padding:12px;background:#fdfbf8}
+.recipe-photo-visual{width:100%;height:145px;border-radius:7px;overflow:hidden;background:#f3eee7}
+.recipe-photo-preview{display:block;width:100%;height:100%;object-fit:cover}
+.recipe-photo-empty{width:100%;height:100%;text-align:center;padding:15px}
+.recipe-photo-actions{min-width:0;display:flex;align-items:flex-start;gap:9px;flex-wrap:wrap}
+.recipe-photo-pick{cursor:pointer;text-align:center}
+#recipe-photo-input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.recipe-photo-actions small{width:100%;font-size:10px;color:#9b9fa6;line-height:1.6}
+.recipe-photo-actions [hidden]{display:none!important}
+.recipe-detail-head{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:20px;align-items:center;margin:0 0 19px}
+.recipe-detail-cover{width:100%;height:142px;object-fit:cover;border-radius:8px;background:#f3eee7}
+.recipe-detail-head .kicker{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#9a8268}
+@media(max-width:760px){
+ .eden-recipe-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .eden-recipe-filter{justify-content:center;min-height:42px;padding:9px 7px;font-size:10px}
+ .eden-recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .recipe-cover{height:116px}
+ .recipe-card-info{padding:12px}
+ .eden-recipe-card h3{font-size:13px;line-height:1.35}
+ .eden-recipe-card .recipe-card-info>p{font-size:9px}
+ .eden-recipe-card footer{flex-direction:column;align-items:stretch;gap:3px}
+ .eden-recipe-card footer .btn{width:100%}
+ .eden-recipe-card footer .row-action{padding:7px}
+ .recipe-cost-tile{padding:8px}
+ .recipe-cost-tile strong{font-size:16px}
+ .recipe-cost-tile small{font-size:9px}
+ .recipe-photo-frame{grid-template-columns:1fr;gap:12px}
+ .recipe-photo-visual{height:188px}
+ .recipe-photo-actions{gap:8px}
+ .recipe-photo-pick{width:100%}
+ .recipe-detail-head{grid-template-columns:1fr;gap:9px}
+ .recipe-detail-cover{height:180px}
+}
+@media(max-width:350px){.eden-recipe-grid{grid-template-columns:1fr}.recipe-cover{height:160px}}
+
+</style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script>
 
@@ -184,10 +390,14 @@ table.data td strong{font-weight:500;color:#405565}
 const $$ = s => document.querySelector(s);
 const EDEN_URL='https://dgxdyxuomemdrnblxlkl.supabase.co';
 const EDEN_PUBLIC_KEY='sb_publishable__O1tCSYndtmCiwnp48vdLw_9-6CAXsk';
-const state={db:null,user:null,data:{},view:'dashboard',modal:null,filter:'',search:'',calendar:new Date(),detail:null,tab:'receber',reportPeriod:'all',connection:{url:EDEN_URL},loading:false};
+const state={db:null,user:null,data:{},view:'dashboard',modal:null,mobilePanel:null,mobileStage:'all',filter:'',search:'',calendar:new Date(),detail:null,tab:'receber',reportPeriod:'all',recipeCategory:'all',connection:{url:EDEN_URL},loading:false};
 const TABLES=['clients','opportunities','events','tasks','accounts','obligations','settlements','transfers','ingredients','recipes','recipe_items','menus','menu_items','purchases','stock_movements'];
 const STAGES=[['novo_contato','Novo contato'],['levantamento','Levantamento'],['orcamento','Orçamento em elaboração'],['cotacao','Cotação e compras'],['proposta_enviada','Proposta enviada'],['aguardando_retorno','Aguardando retorno'],['negociacao','Negociação e ajustes'],['aguardando_aprovacao','Aguardando aprovação'],['aguardando_sinal','Aguardando sinal'],['aguardando_agendamento','Aguardando agendamento'],['confirmado','Evento confirmado'],['planejamento','Planejamento e compras'],['execucao','Preparação e execução'],['pagamento_final','Aguardando pagamento final'],['concluido','Concluído'],['perdido','Perdido ou cancelado']];
 const NAV=[['dashboard','◈','Visão geral'],['opportunities','◇','Funil comercial'],['clients','♙','Clientes'],['calendar','▦','Agenda'],['events','◷','Eventos'],['tasks','☑','Tarefas'],['finance','▤','Financeiro'],['ingredients','◌','Ingredientes'],['recipes','♧','Receitas'],['menus','▧','Menus e propostas'],['purchases','⊞','Compras e estoque'],['reports','▥','Relatórios']];
+const RECIPE_TYPES=[['Bebida','Bebida'],['Menu doce','Menu doce'],['Menu salgado','Menu salgado']];
+const PHOTO_BUCKET='eden-receitas';
+const photoCache=new Map();
+let temporaryPhotoUrl=null;
 const LABELS={clients:'cliente',opportunities:'oportunidade',events:'evento',tasks:'tarefa',accounts:'conta',obligations:'lançamento',ingredients:'ingrediente',recipes:'receita',recipe_items:'ingrediente da receita',menus:'menu',menu_items:'preparação do menu',purchases:'compra',stock_movements:'movimentação de estoque',transfers:'transferência'};
 
 /* O navegador armazena apenas a sessão Auth do Supabase.
@@ -235,7 +445,7 @@ async function logout(){
  removeRealtime();
  const {error}=await state.db.auth.signOut();
  if(error)throw error;
- state.user=null;state.data={};state.modal=null;renderAuth();
+ state.user=null;state.data={};state.modal=null;photoCache.clear();renderAuth();
 }
 function renderAccessDenied(){
  document.title='Éden · Acesso pendente';
@@ -271,7 +481,7 @@ async function init(){
    state.db.auth.onAuthStateChange((evt,session)=>{
      if(!authReady)return;
      if(evt==='SIGNED_OUT'){
-       removeRealtime();state.user=null;state.data={};state.modal=null;renderAuth();
+       removeRealtime();state.user=null;state.data={};state.modal=null;photoCache.clear();renderAuth();
      }
      if(evt==='SIGNED_IN'&&session?.user?.id!==state.user?.id){
        setTimeout(()=>authorizeAndLoad(session.user),0);
@@ -307,11 +517,13 @@ async function loadAll(fromRealtime=false){
  if(err){state.loading=false;throw err}
  if(request!==loadCounter)return;
  TABLES.forEach((t,i)=>state.data[t]=results[i].data||[]);
+ await ensureRecipePhotos();
+ if(request!==loadCounter)return;
  state.loading=false;
  // Não destrói formulários que estão sendo preenchidos quando chega uma alteração remota.
  if(!fromRealtime||!state.modal)render();
 }
-function render(){document.title='Éden · '+(NAV.find(x=>x[0]===state.view)?.[2]||'Gestão');let title=NAV.find(x=>x[0]===state.view)?.[2]||'Painel';const first=state.user?.email?.[0]?.toUpperCase()||'E';$$('#app').innerHTML=`<div class="layout"><aside class="sidebar"><div class="brand"><span class="eden-logo" role="img" aria-label="Éden Experiências Gastronômicas"></span></div><div class="nav-wrap"><div class="nav-section">Seu negócio</div>${NAV.slice(0,6).map(navItem).join('')}<div class="nav-section">Gestão & operação</div>${NAV.slice(6).map(navItem).join('')}</div><div class="sidebar-foot"><strong>${esc(state.user?.email||'Éden')}</strong><button class="small-link" data-action="change-password">♧ Alterar minha senha</button><button class="small-link" data-action="backup">↓ Exportar backup</button><button class="small-link" data-action="logout">↪ Encerrar sessão</button></div></aside><main class="main"><div class="topbar"><div><div class="top-eyebrow">EXPERIÊNCIAS GASTRONÔMICAS</div><h1 class="top-title">${esc(title)}</h1></div><div class="top-right"><span class="local-chip cloud-chip">${lastRealtimeStatus==='SUBSCRIBED'?'● Sincronização ativa':'◌ Conectando...'}</span><span class="date">${fmtDateTime()}</span><div class="avatar">${esc(first)}</div><button class="logout-top" data-action="logout" title="Encerrar sessão" aria-label="Encerrar sessão">↪</button></div></div><div class="content">${renderView()}<p class="footer-note">ÉDEN EXPERIÊNCIAS GASTRONÔMICAS · Dados compartilhados pelo Supabase. Acesso exclusivo às administradoras autorizadas.</p></div></main></div>${state.modal?renderModal(state.modal):''}`}
+function render(){document.title='Éden · '+(NAV.find(x=>x[0]===state.view)?.[2]||'Gestão');let title=NAV.find(x=>x[0]===state.view)?.[2]||'Painel';const first=state.user?.email?.[0]?.toUpperCase()||'E';$$('#app').innerHTML=`<div class="layout"><aside class="sidebar"><div class="brand"><span class="eden-logo" role="img" aria-label="Éden Experiências Gastronômicas"></span></div><div class="nav-wrap"><div class="nav-section">Seu negócio</div>${NAV.slice(0,6).map(navItem).join('')}<div class="nav-section">Gestão & operação</div>${NAV.slice(6).map(navItem).join('')}</div><div class="sidebar-foot"><strong>${esc(state.user?.email||'Éden')}</strong><button class="small-link" data-action="change-password">♧ Alterar minha senha</button><button class="small-link" data-action="backup">↓ Exportar backup</button><button class="small-link" data-action="logout">↪ Encerrar sessão</button></div></aside><main class="main"><div class="topbar"><div><div class="top-eyebrow">EXPERIÊNCIAS GASTRONÔMICAS</div><h1 class="top-title">${esc(title)}</h1></div><div class="top-right"><span class="local-chip cloud-chip">${lastRealtimeStatus==='SUBSCRIBED'?'● Sincronização ativa':'◌ Conectando...'}</span><span class="date">${fmtDateTime()}</span><div class="avatar">${esc(first)}</div><button class="logout-top" data-action="logout" title="Encerrar sessão" aria-label="Encerrar sessão">↪</button></div></div><div class="content">${renderView()}<p class="footer-note">ÉDEN EXPERIÊNCIAS GASTRONÔMICAS · Dados compartilhados pelo Supabase. Acesso exclusivo às administradoras autorizadas.</p></div></main></div>${renderMobileUI()}${state.modal?renderModal(state.modal):''}`; enhanceMobileTables()}
 const NAV_ICON_PATHS={
  dashboard:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
  opportunities:'<path d="M4 19V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13"/><path d="M4 10h16M9 4v16M15 10v10"/>',
@@ -327,6 +539,30 @@ const NAV_ICON_PATHS={
  reports:'<path d="M4 20V11M9 20V6M14 20v-9M19 20V3M2 21h20"/>'
 };
 function navItem(n){let paths=NAV_ICON_PATHS[n[0]]||'';return `<button class="nav-btn ${state.view===n[0]?'active':''}" data-action="nav" data-view="${n[0]}"><span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">${paths}</svg></span>${n[2]}</button>`}
+function mobileIcon(name){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">${NAV_ICON_PATHS[name]||NAV_ICON_PATHS.dashboard}</svg>`}
+function renderMobileUI(){
+ const tabs=[['dashboard','Início'],['calendar','Agenda'],['quick','Novo'],['finance','Financeiro'],['menu','Mais']];
+ const bar=`<nav class="eden-bottom-nav" aria-label="Navegação principal">${tabs.map(([key,label])=>{
+ const isPanel=key==='menu'||key==='quick',active=isPanel?state.mobilePanel===key:state.view===key;
+ const ico=key==='quick'?'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>':key==='menu'?'<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>':mobileIcon(key);
+ return `<button type="button" class="eden-bottom-link ${key==='quick'?'eden-bottom-add':''} ${active?'active':''}" data-action="${isPanel?'mobile-panel':'nav'}" ${isPanel?`data-panel="${key}"`:`data-view="${key}"`} aria-label="${label}" ${active?'aria-current="page"':''}><span class="eden-bottom-icon">${ico}</span><span class="eden-bottom-label">${label}</span></button>`;
+ }).join('')}</nav>`;
+ if(!state.mobilePanel)return bar;
+ const isMenu=state.mobilePanel==='menu';
+ const quick=[['clients','Novo cliente'],['opportunities','Nova oportunidade'],['events','Agendar evento'],['tasks','Nova tarefa'],['obligations','Novo lançamento financeiro'],['ingredients','Novo ingrediente'],['recipes','Nova receita'],['quote','Montar orçamento'],['purchases','Nova compra']];
+ const content=isMenu?`<div class="eden-sheet-section">Áreas do sistema</div><div class="eden-sheet-grid">${NAV.map(n=>`<button class="eden-sheet-nav ${state.view===n[0]?'active':''}" data-action="nav" data-view="${n[0]}">${mobileIcon(n[0])}<span>${esc(n[2])}</span>${state.view===n[0]?'<span aria-hidden="true">✓</span>':''}</button>`).join('')}</div><div class="eden-sheet-section">Sua conta</div><div class="eden-sheet-account">${esc(state.user?.email||'Administradora')}</div><div class="eden-sheet-actions"><button data-action="change-password">Alterar senha</button><button data-action="backup">Exportar backup</button><button data-action="logout">Sair da conta</button></div>`:
+ `<div class="eden-sheet-section">O que deseja adicionar?</div><div class="eden-sheet-grid">${quick.map(([type,label])=>`<button class="eden-sheet-nav" data-action="open" data-type="${type}"><span class="eden-sheet-plus">＋</span><span>${label}</span></button>`).join('')}</div>`;
+ return `${bar}<div class="eden-sheet-backdrop" data-action="close-mobile-panel"><div class="eden-sheet" role="dialog" aria-modal="true" aria-label="${isMenu?'Menu completo':'Ações rápidas'}"><div class="eden-sheet-grip" aria-hidden="true"></div><div class="eden-sheet-header"><strong>${isMenu?'Navegar pela Éden':'Novo registro'}</strong><button type="button" class="eden-sheet-close" data-action="close-mobile-panel" aria-label="Fechar menu">×</button></div><div class="eden-sheet-content">${content}</div></div></div>`;
+}
+function enhanceMobileTables(){
+ document.querySelectorAll('#app table.data').forEach(table=>{
+ const headers=[...table.querySelectorAll('thead th')].map(th=>th.textContent.trim());
+ table.classList.add('eden-adaptive-table');
+ table.querySelectorAll('tbody tr').forEach(tr=>{
+  [...tr.children].forEach((td,i)=>{if(td.tagName!=='TD')return;if(td.colSpan>1){td.classList.add('eden-empty-row');return}td.setAttribute('data-label',headers[i]||'Informação')});
+ });
+ });
+}
 function renderView(){switch(state.view){case 'dashboard':return dashboard();case'opportunities':return opportunities();case'clients':return clients();case'calendar':return calendar();case'events':return events();case'tasks':return tasks();case'finance':return finance();case'ingredients':return ingredients();case'recipes':return recipes();case'menus':return menus();case'purchases':return purchases();case'reports':return reports();default:return dashboard()}}
 function section(title,subtitle='',controls=''){return `<div class="toolbar"><div><h2>${title}</h2>${subtitle?`<p>${subtitle}</p>`:''}</div><div class="button-group">${controls}</div></div>`}
 const addBtn=(type,text='Adicionar')=>`<button class="btn" data-action="open" data-type="${type}">＋ ${esc(text)}</button>`;
@@ -341,17 +577,188 @@ function accountBalance(a){let total=num(a.initial_balance);total+=movements().f
 function dashboard(){let now=today();let openO=get('opportunities').filter(o=>!['concluido','perdido'].includes(o.stage));let upcoming=get('events').filter(e=>e.event_date>=now&&e.status!=='cancelado').sort((a,b)=>a.event_date.localeCompare(b.event_date));let receiv=get('obligations').filter(b=>b.kind==='receber'&&!b.canceled);let payable=get('obligations').filter(b=>b.kind==='pagar'&&!b.canceled);let cash=get('accounts').reduce((s,a)=>s+accountBalance(a),0);let tasksDue=get('tasks').filter(t=>t.status!=='concluida'&&t.due_date&&t.due_date<=now);let month=now.slice(0,7);let cashMov=movements().filter(m=>m.paid_on.startsWith(month));let inMonth=cashMov.filter(m=>m.signed>0).reduce((s,m)=>s+m.signed,0);let outMonth=-cashMov.filter(m=>m.signed<0).reduce((s,m)=>s+m.signed,0);
 return `<section class="hero"><div><span class="pill">SEU ESPAÇO DE GESTÃO</span><h1>A beleza está<br>em cada detalhe.</h1><p>Uma visão leve da operação por trás de reuniões, coquetéis e encontros memoráveis.</p></div><button class="btn btn-light" data-action="open" data-type="opportunities">＋ Nova oportunidade</button></section><div class="metrics">${cardmetric('Saldo em contas',money(cash),'Saldos iniciais + movimentações reais','↗','finance')}${cardmetric('Eventos futuros',upcoming.length,'A partir de hoje','◷','calendar')}${cardmetric('A receber',money(receiv.reduce((s,b)=>s+remaining(b),0)),'Valores pendentes','↓','finance')}${cardmetric('A pagar',money(payable.reduce((s,b)=>s+remaining(b),0)),'Valores pendentes','↑','finance')}</div><div class="columns-2"><div class="panel"><div class="panel-top"><h3>Próximos eventos</h3><button class="row-action" data-action="nav" data-view="calendar">Ver agenda →</button></div>${upcoming.length?upcoming.slice(0,5).map(e=>`<div class="list-row"><div><strong>${esc(e.name)}</strong><span>${dstr(e.event_date)} · ${esc(label('clients',e.client_id))} · ${e.guests||0} convidados</span></div><div class="list-right">${badge(e.status,e.status==='confirmado'?'ok':'warn')}<div><button class="row-action" data-action="event-detail" data-id="${e.id}">Abrir →</button></div></div></div>`).join(''):empty('Nenhum evento futuro cadastrado.')}</div><div class="panel"><div class="panel-top"><h3>Seu foco agora</h3><small>Prioridades do dia</small></div><div class="list-row"><div><strong>${openO.length} oportunidades ativas</strong><span>Clientes em negociação ou planejamento</span></div><button class="row-action" data-action="nav" data-view="opportunities">Ver →</button></div><div class="list-row"><div><strong>${tasksDue.length} tarefas vencidas ou para hoje</strong><span>Atividades que precisam de atenção</span></div><button class="row-action" data-action="nav" data-view="tasks">Ver →</button></div><div class="list-row"><div><strong>${receiv.filter(b=>remaining(b)>.001&&isPast(b.due_date)).length} cobranças atrasadas</strong><span>Contas a receber após o vencimento</span></div><button class="row-action" data-action="nav" data-view="finance">Ver →</button></div><div class="list-row"><div><strong>${money(inMonth)} de entradas no mês</strong><span>Saídas efetivas: ${money(outMonth)}</span></div>${badge('Caixa realizado','ok')}</div></div></div>${section('Visão financeira','Resumo de entradas e saídas liquidadas neste mês')}<div class="detail-grid"><div class="detail-tile"><small>Entradas realizadas</small><strong>${money(inMonth)}</strong></div><div class="detail-tile"><small>Saídas realizadas</small><strong>${money(outMonth)}</strong></div><div class="detail-tile"><small>Saldo de movimentação mensal</small><strong>${money(inMonth-outMonth)}</strong></div></div>`}
 function clients(){let items=get('clients').filter(c=>matches(c.name,c.company,c.contact,c.email,c.phone)).sort((a,b)=>a.name.localeCompare(b.name));return `${section('Relacionamentos duradouros',`${get('clients').length} clientes cadastrados`,addBtn('clients','Novo cliente'))}${textFilter('Buscar cliente, empresa, contato...')}<div class="data-wrap"><table class="data"><thead><tr><th>Cliente / empresa</th><th>Contato</th><th>Telefone</th><th>Eventos</th><th>Cadastro</th><th>Ações</th></tr></thead><tbody>${items.map(c=>`<tr><td><strong>${esc(c.name)}</strong><div class="muted">${esc(c.company)}</div></td><td>${esc(c.contact||c.email||'—')}</td><td>${esc(c.phone||'—')}</td><td>${get('events').filter(e=>e.client_id===c.id).length}</td><td>${dstr(c.created_at?.slice(0,10))}</td><td><button class="row-action" data-action="open" data-type="clients" data-id="${c.id}">Editar</button></td></tr>`).join('')||`<tr><td colspan="6">${empty('Nenhum cliente encontrado')}</td></tr>`}</tbody></table></div>`}
-function opportunities(){let all=get('opportunities');return `${section('Oportunidades em movimento','Arraste os cartões entre etapas ou edite diretamente a oportunidade.',addBtn('opportunities','Nova oportunidade'))}${textFilter('Buscar cliente ou evento...')}<div class="kanban">${STAGES.map(([key,title])=>{let group=all.filter(o=>o.stage===key&&matches(o.title,label('clients',o.client_id)));return `<section class="lane" data-drop-stage="${key}"><header><span>${esc(title)}</span><span class="count">${group.length}</span></header>${group.sort((a,b)=>(b.created_at||'').localeCompare(a.created_at||'')).map(o=>`<div class="kanban-card" draggable="true" data-drag-id="${o.id}"><div class="top-eyebrow">${esc(label('clients',o.client_id))}</div><strong>${esc(o.title)}</strong><p>${o.event_date?`◷ ${dstr(o.event_date)} · `:''}${o.guests||0} convidados</p><div class="card-footer"><span>${money(o.estimated_value)}</span><button class="row-action" data-action="opp-detail" data-id="${o.id}">Abrir →</button></div>${o.followup_date&&o.followup_date<=today()?`<div style="margin-top:10px">${badge('Acompanhar','warn')}</div>`:''}</div>`).join('')}</section>`}).join('')}</div>`}
+function opportunities(){
+ let all=get('opportunities');
+ let current=state.mobileStage||'all';
+ const filtered=all.filter(o=>(current==='all'||o.stage===current)&&matches(o.title,label('clients',o.client_id)))
+   .sort((a,b)=>(b.created_at||'').localeCompare(a.created_at||''));
+ let mobile=`<div class="eden-mobile-funnel"><label class="eden-filter-label" for="eden-stage-filter">Filtrar por etapa</label><select id="eden-stage-filter" data-mobile-stage aria-label="Filtrar oportunidades por etapa"><option value="all">Todas as etapas (${all.length})</option>${STAGES.map(([key,title])=>`<option value="${key}" ${current===key?'selected':''}>${esc(title)} (${all.filter(o=>o.stage===key).length})</option>`).join('')}</select><div class="eden-mobile-results">${filtered.length?filtered.map(o=>`<article class="eden-mobile-opportunity"><div class="eden-mobile-opportunity-head"><div><div class="top-eyebrow">${esc(label('clients',o.client_id))}</div><strong>${esc(o.title)}</strong></div><span class="eden-opp-amount">${money(o.estimated_value)}</span></div><div class="eden-opp-details">${o.event_date?`<span>◷ ${dstr(o.event_date)}</span>`:''}<span>${o.guests||0} convidados</span>${o.followup_date&&o.followup_date<=today()?badge('Acompanhar','warn'):''}</div><label class="eden-opp-stage-label" for="op-${o.id}">Etapa do atendimento</label><select id="op-${o.id}" class="eden-opp-select" data-mobile-opp-stage="${o.id}">${STAGES.map(([key,title])=>`<option value="${key}" ${o.stage===key?'selected':''}>${esc(title)}</option>`).join('')}</select><button class="eden-opp-open" data-action="opp-detail" data-id="${o.id}">Ver detalhes <span aria-hidden="true">→</span></button></article>`).join(''):empty('Nenhuma oportunidade nessa etapa.')}</div></div>`;
+ return `${section('Oportunidades em movimento','Acompanhe clientes por etapa e avance cada atendimento.',addBtn('opportunities','Nova oportunidade'))}${textFilter('Buscar cliente ou evento...')}${mobile}<div class="kanban">${STAGES.map(([key,title])=>{let group=all.filter(o=>o.stage===key&&matches(o.title,label('clients',o.client_id)));return `<section class="lane" data-drop-stage="${key}"><header><span>${esc(title)}</span><span class="count">${group.length}</span></header>${group.sort((a,b)=>(b.created_at||'').localeCompare(a.created_at||'')).map(o=>`<div class="kanban-card" draggable="true" data-drag-id="${o.id}"><div class="top-eyebrow">${esc(label('clients',o.client_id))}</div><strong>${esc(o.title)}</strong><p>${o.event_date?`◷ ${dstr(o.event_date)} · `:''}${o.guests||0} convidados</p><div class="card-footer"><span>${money(o.estimated_value)}</span><button class="row-action" data-action="opp-detail" data-id="${o.id}">Abrir →</button></div>${o.followup_date&&o.followup_date<=today()?`<div style="margin-top:10px">${badge('Acompanhar','warn')}</div>`:''}</div>`).join('')}</section>`}).join('')}</div>`;
+}
 function events(){let list=get('events').filter(e=>matches(e.name,label('clients',e.client_id),e.venue,e.service)).sort((a,b)=>b.event_date.localeCompare(a.event_date));return `${section('Experiências planejadas',`${list.length} eventos registrados`,addBtn('events','Novo evento'))}${textFilter('Buscar por evento, local ou cliente...')}<div class="data-wrap"><table class="data"><thead><tr><th>Evento</th><th>Data</th><th>Cliente</th><th>Convidados</th><th>Contrato</th><th>Status</th><th>Ações</th></tr></thead><tbody>${list.map(e=>`<tr><td><strong>${esc(e.name)}</strong><div class="muted">${esc(e.venue)}</div></td><td>${dstr(e.event_date)}</td><td>${esc(label('clients',e.client_id))}</td><td>${num(e.guests)}</td><td>${money(e.contracted_amount)}</td><td>${badge(e.status,e.status==='cancelado'?'danger':'ok')}</td><td><button class="row-action" data-action="event-detail" data-id="${e.id}">Detalhes</button> <button class="row-action" data-action="open" data-type="events" data-id="${e.id}">Editar</button></td></tr>`).join('')||`<tr><td colspan="7">${empty('Nenhum evento cadastrado')}</td></tr>`}</tbody></table></div>`}
-function calendar(){let year=state.calendar.getFullYear(),month=state.calendar.getMonth();let first=new Date(year,month,1).getDay();let offset=(first+6)%7;let days=new Date(year,month+1,0).getDate();let cells=[];for(let i=0;i<Math.ceil((days+offset)/7)*7;i++){let day=i-offset+1;if(day<1||day>days){cells.push('<div class="cal-cell blank"></div>');continue}let iso=`${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;let eventList=get('events').filter(e=>e.event_date===iso);cells.push(`<div class="cal-cell ${iso===today()?'today':''}"><span class="cal-num">${day}</span>${eventList.map(e=>`<button class="cal-event ${e.status==='cancelado'?'cancelled':''}" data-action="event-detail" data-id="${e.id}" title="${esc(e.name)}">${esc(e.start_time?.slice(0,5)||'')} ${esc(e.name)}</button>`).join('')}</div>`)}return `${section('Calendário de eventos','Datas, horários e compromissos em um só lugar.',addBtn('events','Agendar evento'))}<div class="panel" style="padding:0;overflow:hidden"><div class="panel-top" style="padding:18px 20px;margin:0"><h3 class="calendar-bar"><button class="btn btn-soft btn-xs" data-action="month" data-diff="-1">←</button><span class="calendar-title">${state.calendar.toLocaleDateString('pt-BR',{month:'long',year:'numeric'})}</span><button class="btn btn-soft btn-xs" data-action="month" data-diff="1">→</button></h3><button class="btn btn-outline btn-xs" data-action="month-today">Mês atual</button></div><div class="calendar"><div class="cal-days">${['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'].map(x=>`<div>${x}</div>`).join('')}</div><div class="cal-grid">${cells.join('')}</div></div></div>`}
+function calendar(){let year=state.calendar.getFullYear(),month=state.calendar.getMonth();let first=new Date(year,month,1).getDay();let offset=(first+6)%7;let days=new Date(year,month+1,0).getDate();let cells=[];for(let i=0;i<Math.ceil((days+offset)/7)*7;i++){let day=i-offset+1;if(day<1||day>days){cells.push('<div class="cal-cell blank"></div>');continue}let iso=`${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;let eventList=get('events').filter(e=>e.event_date===iso);cells.push(`<div class="cal-cell ${iso===today()?'today':''}"><span class="cal-num">${day}</span>${eventList.map(e=>`<button class="cal-event ${e.status==='cancelado'?'cancelled':''}" data-action="event-detail" data-id="${e.id}" title="${esc(e.name)}">${esc(e.start_time?.slice(0,5)||'')} ${esc(e.name)}</button>`).join('')}</div>`)}return `${section('Calendário de eventos','Datas, horários e compromissos em um só lugar.',addBtn('events','Agendar evento'))}<div class="panel" style="padding:0;overflow:hidden"><div class="panel-top" style="padding:18px 20px;margin:0"><h3 class="calendar-bar"><button class="btn btn-soft btn-xs" data-action="month" data-diff="-1">←</button><span class="calendar-title">${state.calendar.toLocaleDateString('pt-BR',{month:'long',year:'numeric'})}</span><button class="btn btn-soft btn-xs" data-action="month" data-diff="1">→</button></h3><button class="btn btn-outline btn-xs" data-action="month-today">Mês atual</button></div><div class="calendar"><div class="cal-days">${['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'].map(x=>`<div>${x}</div>`).join('')}</div><div class="cal-grid">${cells.join('')}</div></div><div class="eden-mobile-calendar">${(()=>{
+ let key=`${year}-${String(month+1).padStart(2,'0')}`;
+ let monthly=get('events').filter(e=>e.event_date?.startsWith(key)).sort((a,b)=>(a.event_date+(a.start_time||'')).localeCompare(b.event_date+(b.start_time||'')));
+ if(!monthly.length)return empty('Nenhum evento neste mês. Use “Agendar evento” para começar.');
+ return monthly.map(e=>`<button class="eden-calendar-list-item" data-action="event-detail" data-id="${e.id}"><span class="eden-calendar-date"><strong>${Number(e.event_date.slice(-2))}</strong><small>${new Date(e.event_date+'T12:00:00').toLocaleDateString('pt-BR',{weekday:'short'}).replace('.','')}</small></span><span class="eden-calendar-summary"><strong>${esc(e.name)}</strong><small>${esc(e.start_time?.slice(0,5)||'Horário não informado')} · ${esc(label('clients',e.client_id))}</small>${badge(e.status,e.status==='cancelado'?'danger':'ok')}</span><span class="eden-calendar-arrow">›</span></button>`).join('');
+})()}</div></div>`}
 function tasks(){let items=get('tasks').filter(t=>matches(t.title,t.assignee,label('events',t.event_id))).sort((a,b)=>(a.status==='concluida')-(b.status==='concluida')||(a.due_date||'9999').localeCompare(b.due_date||'9999'));return `${section('Tudo no seu tempo','Acompanhe as atividades antes, durante e depois de cada evento.',addBtn('tasks','Nova tarefa'))}${textFilter('Pesquisar tarefas...')}<div class="panel">${items.length?items.map(t=>`<div class="list-row"><div style="display:flex;gap:13px;align-items:flex-start"><input type="checkbox" aria-label="Concluir tarefa" data-toggle-task="${t.id}" ${t.status==='concluida'?'checked':''} style="width:18px;min-height:18px;margin-top:1px"><div><strong style="${t.status==='concluida'?'text-decoration:line-through;opacity:.5':''}">${esc(t.title)}</strong><span>${esc(label('events',t.event_id))} · ${t.due_date?dstr(t.due_date):'Sem prazo'}${t.assignee?' · '+esc(t.assignee):''}</span></div></div><div class="button-group">${badge(t.priority,t.priority==='alta'?'danger':'muted')}<button class="row-action" data-action="open" data-type="tasks" data-id="${t.id}">Editar</button></div></div>`).join(''):empty('Nenhuma tarefa cadastrada.')}</div>`}
 function finance(){let items=get('obligations').filter(b=>b.kind===state.tab).sort((a,b)=>a.due_date.localeCompare(b.due_date));let income=movements().filter(x=>x.signed>0).reduce((a,b)=>a+b.signed,0),expense=-movements().filter(x=>x.signed<0).reduce((a,b)=>a+b.signed,0),remainingSum=items.filter(x=>!x.canceled).reduce((a,b)=>a+remaining(b),0);let cbal=get('accounts').reduce((a,b)=>a+accountBalance(b),0);return `${section('Dinheiro com clareza','Previsto não é recebido; contratado não é saldo disponível.',`<button class="btn btn-outline" data-action="open" data-type="accounts">＋ Conta bancária</button>${addBtn('obligations','Novo lançamento')}`)}<div class="metrics">${cardmetric('Saldo disponível',money(cbal),'Saldo inicial + caixa realizado','↗','finance')}${cardmetric('Entradas reais',money(income),'Liquidações a receber','↓','finance')}${cardmetric('Saídas reais',money(expense),'Liquidações a pagar','↑','finance')}${cardmetric('Pendente nesta aba',money(remainingSum),'Saldo não liquidado','◷','finance')}</div><div class="sub-tabs">${[['receber','Contas a receber'],['pagar','Contas a pagar'],['caixa','Extrato e contas'],['transferir','Transferências']].map(([key,l])=>`<button class="${state.tab===key?'active':''}" data-action="fin-tab" data-tab="${key}">${l}</button>`).join('')}</div>${state.tab==='caixa'?financeCash():state.tab==='transferir'?financeTransfers():`<div class="data-wrap"><table class="data"><thead><tr><th>Descrição / vínculo</th><th>Vencimento</th><th>Valor previsto</th><th>Realizado</th><th>Restante</th><th>Situação</th><th>Ações</th></tr></thead><tbody>${items.map(b=>{let [title,color]=billStatus(b);return `<tr><td><strong>${esc(b.description)}</strong><div class="muted">${esc(b.counterparty||label('clients',b.client_id))} · ${esc(label('events',b.event_id))}</div></td><td>${dstr(b.due_date)}</td><td>${money(b.amount)}</td><td>${money(paid(b))}</td><td>${money(remaining(b))}</td><td>${badge(title,color)}</td><td>${!b.canceled&&remaining(b)>.005?`<button class="row-action" data-action="settle" data-id="${b.id}">Liquidar</button>`:''}<button class="row-action" data-action="bill-detail" data-id="${b.id}">Histórico</button>${!b.canceled&&paid(b)===0?`<button class="row-action" data-action="cancel-bill" data-id="${b.id}">Cancelar</button>`:''}</td></tr>`}).join('')||`<tr><td colspan="7">${empty('Nenhum lançamento nesta categoria.')}</td></tr>`}</tbody></table></div>`}`}
 function financeCash(){let mv=movements().sort((a,b)=>b.paid_on.localeCompare(a.paid_on));return `<div class="panel" style="margin-bottom:18px"><div class="panel-top"><h3>Minhas contas</h3><button class="btn btn-soft btn-xs" data-action="open" data-type="accounts">＋ Nova conta</button></div><div class="detail-grid">${get('accounts').map(a=>`<div class="detail-tile"><small>${esc(a.name)} · ${esc(a.type)}</small><strong>${money(accountBalance(a))}</strong></div>`).join('')||'<div class="muted">Cadastre sua primeira conta financeira.</div>'}</div></div><div class="data-wrap"><table class="data"><thead><tr><th>Data efetiva</th><th>Movimentação</th><th>Conta</th><th>Categoria</th><th>Valor</th><th>Ações</th></tr></thead><tbody>${mv.map(m=>`<tr><td>${dstr(m.paid_on)}</td><td><strong>${esc(m.description||'Movimento')}</strong></td><td>${esc(label('accounts',m.account_id))}</td><td>${esc(m.category||'—')}</td><td style="font-weight:700;color:${m.signed>=0?'#3c7960':'#a5584d'}">${m.signed>=0?'+':''}${money(m.signed)}</td><td><button class="row-action" data-action="reverse" data-id="${m.id}">Estornar</button></td></tr>`).join('')||`<tr><td colspan="6">${empty('Nenhuma entrada ou saída realizada')}</td></tr>`}</tbody></table></div>`}
 function financeTransfers(){return `${section('Entre contas próprias','Transferências mudam os saldos das contas, não o lucro nem a receita.',addBtn('transfers','Nova transferência'))}<div class="data-wrap"><table class="data"><thead><tr><th>Data</th><th>De</th><th>Para</th><th>Valor</th></tr></thead><tbody>${get('transfers').map(t=>`<tr><td>${dstr(t.transferred_on)}</td><td>${esc(label('accounts',t.from_account))}</td><td>${esc(label('accounts',t.to_account))}</td><td>${money(t.amount)}</td></tr>`).join('')||`<tr><td colspan="4">${empty('Nenhuma transferência registrada')}</td></tr>`}</tbody></table></div>`}
 function ingredients(){let list=get('ingredients').filter(x=>matches(x.name,x.category,x.supplier)).sort((a,b)=>a.name.localeCompare(b.name));return `${section('Biblioteca de ingredientes','Preços por embalagem e custos proporcionais por unidade base.',addBtn('ingredients','Novo ingrediente'))}${textFilter('Buscar ingredientes...')}<div class="data-wrap"><table class="data"><thead><tr><th>Produto</th><th>Referência de compra</th><th>Custo base</th><th>Estoque</th><th>Limite mínimo</th><th>Ações</th></tr></thead><tbody>${list.map(x=>{let stock=stockQty(x.id);return `<tr><td><strong>${esc(x.name)}</strong><div class="muted">${esc(x.category||'Sem categoria')}</div></td><td>${num(x.pack_qty).toLocaleString('pt-BR')} ${x.unit} por ${money(x.pack_price)}</td><td>${money(num(x.pack_price)/num(x.pack_qty))}/${x.unit}</td><td>${stock.toLocaleString('pt-BR')} ${x.unit}</td><td>${stock<num(x.min_stock)?badge('Abaixo do mínimo','danger'):badge('Regular','ok')}</td><td><button class="row-action" data-action="open" data-type="ingredients" data-id="${x.id}">Editar</button><button class="row-action" data-action="stock" data-id="${x.id}">Ajustar estoque</button></td></tr>`}).join('')||`<tr><td colspan="6">${empty('Cadastre ingredientes para calcular custos e compras.')}</td></tr>`}</tbody></table></div>`}
+
+/* Fotografia de preparação: arquivo privado no Supabase Storage, nunca base64 no banco.
+   photo_url guarda o caminho permanente; a URL assinada é temporária e não persistida. */
+function isStoragePhoto(path){return typeof path==='string' && /^receitas\/[0-9a-f-]{36}\/[a-zA-Z0-9_.-]+\.(?:webp|jpg|jpeg|png)$/i.test(path)}
+function photoDisplayUrl(r){
+ const p=String(r?.photo_url||'');
+ if(isStoragePhoto(p))return photoCache.get(p)?.src||'';
+ return /^https:\/\//i.test(p)?p:''; // Somente links legados https, caso existam.
+}
+function photoCardHtml(r,cls='recipe-cover'){
+ const src=photoDisplayUrl(r);
+ return src?`<img class="${cls}" src="${esc(src)}" loading="lazy" alt="Fotografia de ${esc(r.name)}">`:
+ `<div class="${cls} recipe-cover-empty"><span aria-hidden="true">✳</span><small>Sem fotografia</small></div>`;
+}
+async function ensureRecipePhotos(){
+ if(!state.db?.storage||!state.user)return;
+ const paths=[...new Set(get('recipes').map(r=>r.photo_url).filter(isStoragePhoto))];
+ const now=Date.now();
+ const missing=paths.filter(p=>!photoCache.has(p)||photoCache.get(p).expiry<now);
+ if(!missing.length)return;
+ for(let start=0;start<missing.length;start+=40){
+   const portion=missing.slice(start,start+40);
+   try{
+     const {data,error}=await state.db.storage.from(PHOTO_BUCKET).createSignedUrls(portion,3600);
+     if(error)throw error;
+     for(const item of data||[]){
+       if(item?.signedUrl && portion.includes(item.path))photoCache.set(item.path,{src:item.signedUrl,expiry:Date.now()+50*60*1000});
+     }
+   }catch(err){console.warn('Éden: fotos indisponíveis — confira o SQL 03 (Storage):',err?.message||err)}
+ }
+}
+function makeUUID(){
+ if(crypto.randomUUID)return crypto.randomUUID();
+ const a=new Uint8Array(16);crypto.getRandomValues(a);a[6]=(a[6]&15)|64;a[8]=(a[8]&63)|128;
+ return [...a].map((x,i)=>[4,6,8,10].includes(i)?'-'+x.toString(16).padStart(2,'0'):x.toString(16).padStart(2,'0')).join('');
+}
+function clearTemporaryPhoto(){if(temporaryPhotoUrl){URL.revokeObjectURL(temporaryPhotoUrl);temporaryPhotoUrl=null}}
+async function optimizedPhoto(file){
+ if(!file)throw Error('Escolha uma imagem.');
+ if(file.size>30*1024*1024)throw Error('A imagem original não pode ultrapassar 30 MB.');
+ if(!file.type.startsWith('image/')&&!/\.(heic|heif|jpg|jpeg|png|webp|avif)$/i.test(file.name))throw Error('Escolha uma imagem válida.');
+ // Reduz arquivos grandes de celular antes do upload (lado maior 1600 px).
+ const url=URL.createObjectURL(file);
+ try{
+   const img=new Image();img.decoding='async';img.src=url;
+   try{await img.decode()}catch(e){throw Error('Este formato de foto não pôde ser aberto no navegador. Tente JPG, PNG ou WebP.');}
+   const ratio=Math.min(1,1600/Math.max(img.naturalWidth,img.naturalHeight));
+   if(!img.naturalWidth||!img.naturalHeight)throw Error('A imagem está vazia ou corrompida.');
+   const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.naturalWidth*ratio));canvas.height=Math.max(1,Math.round(img.naturalHeight*ratio));
+   const ctx=canvas.getContext('2d');if(!ctx)throw Error('Não foi possível preparar a fotografia.');
+   ctx.drawImage(img,0,0,canvas.width,canvas.height);
+   let mime='image/webp';
+   let blob=await new Promise(resolve=>canvas.toBlob(resolve,mime,.83));
+   if(!blob||blob.type!=='image/webp'){mime='image/jpeg';blob=await new Promise(resolve=>canvas.toBlob(resolve,mime,.82))}
+   if(!blob)throw Error('Não foi possível comprimir a fotografia.');
+   if(blob.size>5*1024*1024)throw Error('A foto ficou maior que 5 MB. Selecione uma versão menor.');
+   return {blob,mime,extension:mime==='image/webp'?'webp':'jpg'};
+ }finally{URL.revokeObjectURL(url)}
+}
+function recipePhotoForm(record){
+ const src=photoDisplayUrl(record),hasImage=!!record?.photo_url;
+ return `<div class="recipe-photo-field field wide"><div class="recipe-photo-intro"><label for="recipe-photo-input">Foto da preparação</label><span>Opcional · Uma foto por receita</span></div>
+ <div class="recipe-photo-frame">
+ <div class="recipe-photo-visual">${src?`<img class="recipe-photo-preview" id="recipe-photo-preview" src="${esc(src)}" alt="Fotografia da preparação">`:`<div id="recipe-photo-preview" class="recipe-photo-empty"><span aria-hidden="true">✳</span><small>Adicione a imagem do seu produto</small></div>`}</div>
+ <div class="recipe-photo-actions"><label for="recipe-photo-input" class="btn btn-soft recipe-photo-pick">${hasImage?'Trocar fotografia':'Escolher fotografia'}</label>
+ <input id="recipe-photo-input" type="file" name="recipe_photo" accept="image/*,.heic,.heif" aria-describedby="recipe-photo-help">
+ <button class="btn btn-outline btn-xs" type="button" data-action="remove-recipe-photo" ${hasImage?'':'hidden'}>Remover foto</button>
+ <input type="hidden" name="remove_photo" value="0">
+ <small id="recipe-photo-help">Use a câmera ou galeria. A imagem será otimizada e salva na nuvem, disponível às duas administradoras.</small></div>
+ </div></div>`;
+}
+function previewSelectedPhoto(input){
+ const form=input.closest('form');const file=input.files?.[0];if(!form)return;
+ clearTemporaryPhoto();
+ if(!file)return;
+ if(file.size>30*1024*1024){input.value='';toast('Escolha uma foto com até 30 MB antes da otimização.',true);return}
+ temporaryPhotoUrl=URL.createObjectURL(file);
+ const box=form.querySelector('.recipe-photo-visual');
+ box.innerHTML=`<img id="recipe-photo-preview" class="recipe-photo-preview" alt="Prévia da foto selecionada">`;
+ box.querySelector('img').src=temporaryPhotoUrl;
+ form.elements.remove_photo.value='0';
+ const help=form.querySelector('#recipe-photo-help');if(help)help.textContent='Foto selecionada: '+file.name+' · será salva ao confirmar a receita.';
+ form.querySelector('[data-action="remove-recipe-photo"]').hidden=false;
+}
+function removePhotoSelection(btn){
+ const form=btn.closest('form');if(!form)return;
+ clearTemporaryPhoto();
+ const input=form.querySelector('#recipe-photo-input');if(input)input.value='';
+ form.elements.remove_photo.value='1';
+ form.querySelector('.recipe-photo-visual').innerHTML='<div id="recipe-photo-preview" class="recipe-photo-empty"><span aria-hidden="true">✳</span><small>Sem fotografia</small></div>';
+ form.querySelector('#recipe-photo-help').textContent='A foto atual será removida ao salvar a receita.';
+ btn.hidden=true;
+}
+
 function recipeCost(id){return get('recipe_items').filter(i=>i.recipe_id===id).reduce((s,i)=>{let ing=one('ingredients',i.ingredient_id);return s+(ing?num(i.qty)*num(ing.pack_price)/num(ing.pack_qty):0)},0)}
-function recipes(){return `${section('Fichas técnicas','Custo automático usando o catálogo central.',addBtn('recipes','Nova receita'))}${textFilter('Buscar por preparação ou categoria...')}<div class="recipe-grid">${get('recipes').filter(r=>matches(r.name,r.category)).map(r=>`<div class="recipe-card"><span class="kicker">${esc(r.category||'Preparação')}</span><h3>${esc(r.name)}</h3><p>Rendimento: ${num(r.yield_qty)} porções · ${num(r.prep_minutes)} min</p><div class="detail-tile" style="padding:10px;border-radius:8px"><small>Custo total estimado</small><strong style="font-size:20px;margin-top:4px">${money(recipeCost(r.id))}</strong><small>Porção: ${money(recipeCost(r.id)/num(r.yield_qty))}</small></div><footer><button class="btn btn-soft btn-xs" data-action="recipe-detail" data-id="${r.id}">Ingredientes e custos</button><button class="row-action" data-action="open" data-type="recipes" data-id="${r.id}">Editar</button></footer></div>`).join('')||`<div class="panel">${empty('Crie uma receita e vincule seus ingredientes.')}</div>`}</div>`}
-function menus(){return `${section('Menus & propostas','O cliente recebe um menu elegante, sem visualizar seus custos.',addBtn('menus','Novo menu'))}<div class="recipe-grid">${get('menus').map(m=>{let mc=menuCost(m.id);return `<div class="recipe-card"><div class="kicker">PROPOSTA · V${m.version}</div><h3>${esc(m.name)}</h3><p>${esc(label('clients',m.client_id))} · ${num(m.guests)} convidados</p><div class="detail-tile" style="padding:10px"><small>Valor comercial</small><strong style="font-size:20px">${money(m.price)}</strong><small>Custo estimado interno: ${money(mc)}</small></div><footer><button class="btn btn-soft btn-xs" data-action="menu-detail" data-id="${m.id}">Montar menu</button><button class="row-action" data-action="open" data-type="menus" data-id="${m.id}">Editar</button></footer></div>`}).join('')||`<div class="panel">${empty('Comece cadastrando suas preparações e criando um menu.')}</div>`}</div>`}
+function recipes(){
+ const groups=[['all','Todas'],...RECIPE_TYPES];
+ const selected=state.recipeCategory||'all';
+ const pills=`<div class="eden-recipe-filters" aria-label="Filtrar receitas por tipo">${groups.map(([key,label])=>`<button type="button" class="eden-recipe-filter ${selected===key?'active':''}" data-action="recipe-category" data-category="${esc(key)}">${esc(label)}<span>${key==='all'?get('recipes').length:get('recipes').filter(x=>x.category===key).length}</span></button>`).join('')}</div>`;
+ const filtered=get('recipes').filter(r=>(selected==='all'||r.category===selected)&&matches(r.name,r.category));
+ return `${section('Fichas técnicas','Receitas organizadas por tipo, com fotografia e custo automático.',`<button class="btn btn-outline" data-action="quote-new">✧ Montar orçamento</button>${addBtn('recipes','Nova receita')}`)}${pills}${textFilter('Buscar por nome ou categoria...')}<div class="recipe-grid eden-recipe-grid">${filtered.map(r=>`<div class="recipe-card eden-recipe-card">${photoCardHtml(r)}<div class="recipe-card-info"><span class="kicker">${esc(r.category||'Sem categoria')}</span><h3>${esc(r.name)}</h3><p>Rendimento: ${num(r.yield_qty)} porções · ${num(r.prep_minutes)} min</p><div class="detail-tile recipe-cost-tile"><small>Custo total estimado</small><strong>${money(recipeCost(r.id))}</strong><small>Porção: ${money(recipeCost(r.id)/num(r.yield_qty))}</small></div><footer><button class="btn btn-soft btn-xs" data-action="recipe-detail" data-id="${r.id}">Ficha técnica</button><button class="btn btn-outline btn-xs" data-action="quote-new" data-recipe="${r.id}">＋ Orçamento</button><button class="row-action" data-action="open" data-type="recipes" data-id="${r.id}">Editar</button></footer></div></div>`).join('')||`<div class="panel">${empty(selected==='all'?'Crie sua primeira receita e adicione sua fotografia.':'Nenhuma receita desta categoria.')}</div>`}</div>`
+}
+
+/* Orçamento guiado: gera um menu comercial e os vínculos com receitas e suas fotos,
+   reutilizando o banco atual. Não gera receita financeira nem registra contrato. */
+function quoteStart(recipeId=''){
+ if(!get('recipes').length){state.view='recipes';showModal('form','recipes');toast('Cadastre uma receita para montar o orçamento.');return}
+ showModal('quote',null,null,{recipe_id:recipeId});
+}
+function quoteFormHTML(context={}){
+ const rs=[...get('recipes')].sort((a,b)=>String(a.category).localeCompare(String(b.category))||String(a.name).localeCompare(String(b.name)));
+ const clients=get('clients');const events=get('events');
+ const opts=clients.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');
+ const evs=events.map(e=>`<option value="${esc(e.id)}" data-client="${esc(e.client_id||'')}">${esc(e.name)} · ${dstr(e.event_date)}</option>`).join('');
+ const recipeItems=rs.map(r=>{
+   const checked=context.recipe_id===r.id;
+   return `<label class="quote-choice ${checked?'selected':''}"><input type="checkbox" name="quote_recipe" value="${esc(r.id)}" ${checked?'checked':''} aria-label="Incluir ${esc(r.name)}"><div class="quote-choice-preview">${photoCardHtml(r,'quote-choice-photo')}</div><div class="quote-choice-info"><span class="quote-choice-category">${esc(r.category||'Preparação')}</span><strong>${esc(r.name)}</strong><small>${esc(r.description||'Receita Éden')}</small></div><div class="quote-choice-qty"><span>Porções</span><input type="number" name="quote_portions_${esc(r.id)}" aria-label="Porções de ${esc(r.name)}" min="1" max="100000" step="1" value="1"></div></label>`;
+ }).join('');
+ return `<div class="quote-intro"><div class="quote-kicker">UM ENCONTRO, UMA EXPERIÊNCIA</div><p>Escolha as preparações da biblioteca. As fotografias de cada receita acompanharão o orçamento comercial.</p></div>
+ <form id="quote-form">
+ <div class="form-grid">
+ <div class="field wide"><label for="quote-name">Título do orçamento *</label><input id="quote-name" name="name" placeholder="Ex.: Coquetel corporativo · Empresa Horizonte" required maxlength="180"></div>
+ <div class="field"><label for="quote-client">Cliente</label><select id="quote-client" name="client_id"><option value="">Selecionar mais tarde</option>${opts}</select></div>
+ <div class="field"><label for="quote-event">Evento vinculado (opcional)</label><select id="quote-event" name="event_id"><option value="">Nenhum</option>${evs}</select></div>
+ <div class="field"><label for="quote-guests">Quantidade de convidados *</label><input id="quote-guests" name="guests" type="number" min="1" max="100000" step="1" value="20" required></div>
+ <div class="field"><label for="quote-price">Valor proposto (R$)</label><input id="quote-price" name="price" type="number" min="0" step="0.01" value="0" placeholder="Definir depois"></div>
+ <div class="field wide"><label for="quote-description">Apresentação comercial</label><textarea id="quote-description" name="description" placeholder="Uma experiência pensada para valorizar cada encontro..."></textarea></div>
+ </div>
+ <div class="quote-selection-head"><div><h3>Preparações do orçamento</h3><p>Escolha um ou mais itens. Você poderá ajustar quantidades depois.</p></div><span id="quote-selected-count">${context.recipe_id?'1 selecionada':'0 selecionadas'}</span></div>
+ <div class="quote-choices">${recipeItems}</div>
+ <div class="quote-footnote">As imagens são reutilizadas das receitas, sem novo envio. Custos internos não aparecem no orçamento do cliente. Salvar este orçamento não cria cobranças.</div>
+ <div class="modal-foot quote-modal-foot"><button type="button" class="btn btn-outline" data-action="close">Cancelar</button><button type="submit" class="btn">Criar orçamento →</button></div></form>`;
+}
+async function saveQuote(form){
+ const fd=new FormData(form);const ids=[...new Set(fd.getAll('quote_recipe').map(String))];
+ if(!ids.length)throw Error('Escolha pelo menos uma preparação para o orçamento.');
+ const guests=Number(fd.get('guests')),price=Number(fd.get('price')||0),title=String(fd.get('name')||'').trim();
+ if(title.length<3)throw Error('Preencha um nome para o orçamento.');
+ if(!Number.isSafeInteger(guests)||guests<1||guests>100000)throw Error('Informe uma quantidade válida de convidados.');
+ if(!Number.isFinite(price)||price<0)throw Error('Informe um valor comercial válido.');
+ const items=ids.map((recipeId,i)=>{
+   const recipe=one('recipes',recipeId);if(!recipe)throw Error('Uma receita escolhida não está mais cadastrada.');
+   const portions=Number(fd.get('quote_portions_'+recipeId));
+   if(!Number.isSafeInteger(portions)||portions<1||portions>100000)throw Error('Confira o número de porções de '+recipe.name+'.');
+   return {recipe_id:recipeId,portions,sort_order:i};
+ });
+ const eventId=String(fd.get('event_id')||'');let clientId=String(fd.get('client_id')||'');
+ if(eventId){const event=one('events',eventId);if(!event)throw Error('Evento não encontrado.');if(event.client_id && clientId && event.client_id!==clientId)throw Error('O evento pertence a outro cliente.');clientId=clientId||event.client_id||''}
+ const row={name:title,client_id:clientId||null,event_id:eventId||null,guests,price,description:String(fd.get('description')||''),notes:'',version:1};
+ const {data,error}=await state.db.from('menus').insert(row).select('id').single();if(error)throw error;
+ const newId=data?.id;if(!newId)throw Error('Não foi possível identificar o orçamento criado.');
+ const {error:itemError}=await state.db.from('menu_items').insert(items.map(item=>({...item,menu_id:newId})));
+ if(itemError){
+   // Evita um orçamento vazio caso a associação das receitas falhe.
+   const {error:rollbackError}=await state.db.from('menus').delete().eq('id',newId);
+   if(rollbackError)console.warn('Éden: não foi possível desfazer o rascunho.',rollbackError);
+   throw Error('Não foi possível associar as receitas ao orçamento. '+itemError.message);
+ }
+ await loadAll();showModal('menu',null,newId);toast('Orçamento criado com '+items.length+' preparação(ões). Você pode visualizar e salvar o PDF.');
+}
+
+function menus(){return `${section('Menus & propostas','Crie orçamentos a partir das receitas e fotos, sem revelar custos internos.',`<button class="btn btn-outline" data-action="quote-new">✧ Novo orçamento</button>${addBtn('menus','Novo menu')}`)}<div class="recipe-grid">${get('menus').map(m=>{let mc=menuCost(m.id);return `<div class="recipe-card"><div class="kicker">PROPOSTA · V${m.version}</div><h3>${esc(m.name)}</h3><p>${esc(label('clients',m.client_id))} · ${num(m.guests)} convidados</p><div class="detail-tile" style="padding:10px"><small>Valor comercial</small><strong style="font-size:20px">${money(m.price)}</strong><small>Custo estimado interno: ${money(mc)}</small></div><footer><button class="btn btn-soft btn-xs" data-action="menu-detail" data-id="${m.id}">Montar menu</button><button class="row-action" data-action="open" data-type="menus" data-id="${m.id}">Editar</button></footer></div>`}).join('')||`<div class="panel">${empty('Comece cadastrando suas preparações e criando um menu.')}</div>`}</div>`}
 function menuCost(menuId){return get('menu_items').filter(x=>x.menu_id===menuId).reduce((s,x)=>s+num(x.portions)*recipeCost(x.recipe_id)/num(one('recipes',x.recipe_id)?.yield_qty||1),0)}
 function requiredForMenu(m){let needed=new Map();get('menu_items').filter(x=>x.menu_id===m.id).forEach(item=>{let recipe=one('recipes',item.recipe_id);get('recipe_items').filter(i=>i.recipe_id===item.recipe_id).forEach(i=>needed.set(i.ingredient_id,(needed.get(i.ingredient_id)||0)+num(i.qty)*num(item.portions)/num(recipe?.yield_qty||1)))});return [...needed].map(([id,qty])=>({ingredient:one('ingredients',id),id,qty,stock:stockQty(id),buy:Math.max(0,qty-stockQty(id))})).filter(x=>x.ingredient)}
 function stockQty(ingredientId){return Math.round(get('stock_movements').filter(s=>s.ingredient_id===ingredientId).reduce((a,s)=>a+num(s.qty),0)*1000)/1000}
@@ -372,7 +779,7 @@ function formFields(kind,record={},context={}){
   accounts:[f('name','Nome da conta','text',true),f('type','Tipo','select',true,[['banco','Conta bancária'],['caixa','Dinheiro / caixa'],['pix','Pix'],['cartao','Cartão']]),f('initial_balance','Saldo inicial (R$)','number',true)],
   obligations:[f('kind','Tipo','select',true,[['receber','Conta a receber'],['pagar','Conta a pagar']]),f('description','Descrição','text',true),f('client_id','Cliente (se aplicável)','select',false,clientOpts),f('event_id','Evento (se aplicável)','select',false,eventOpts),f('counterparty','Beneficiário / pagador'),f('category','Categoria'),f('amount','Valor (R$)','number',true),f('due_date','Vencimento','date',true),f('notes','Observações','textarea')],
   ingredients:[f('name','Ingrediente','text',true),f('category','Categoria'),f('unit','Unidade base','select',true,[['g','Gramas (g)'],['ml','Mililitros (ml)'],['un','Unidades (un)']]),f('pack_qty','Quantidade por embalagem na unidade base','number',true),f('pack_price','Preço da embalagem (R$)','number',true),f('min_stock','Estoque mínimo','number'),f('supplier','Fornecedor')],
-  recipes:[f('name','Nome da preparação','text',true),f('category','Categoria'),f('yield_qty','Rendimento (porções)','number',true),f('prep_minutes','Tempo de preparo (minutos)','number'),f('description','Descrição comercial','textarea'),f('instructions','Modo de preparo interno','textarea'),f('photo_url','URL da fotografia (opcional)','url')],
+  recipes:[f('name','Nome da preparação','text',true),f('category','Tipo de receita','select',true,RECIPE_TYPES),f('yield_qty','Rendimento (porções)','number',true),f('prep_minutes','Tempo de preparo (minutos)','number'),f('description','Descrição comercial','textarea'),f('instructions','Modo de preparo interno','textarea')],
   recipe_items:[f('recipe_id','Receita','select',true,recipeOpts),f('ingredient_id','Ingrediente','select',true,ingOpts),f('qty','Quantidade na unidade base do ingrediente','number',true)],
   menus:[f('name','Título do menu','text',true),f('client_id','Cliente','select',false,clientOpts),f('event_id','Evento','select',false,eventOpts),f('guests','Convidados / referência de porções','number',true),f('price','Valor da proposta (R$)','number'),f('description','Texto de apresentação','textarea'),f('notes','Condições comerciais / observações','textarea')],
   menu_items:[f('menu_id','Menu','select',true,refs('menus')),f('recipe_id','Preparação','select',true,recipeOpts),f('portions','Quantidade total de porções','number',true),f('sort_order','Ordem','number')],
@@ -386,26 +793,71 @@ function defaultFieldValue(name){if(['event_date','due_date','purchase_date','pa
 function fieldHTML(x){let id='field-'+x.name, attrs=`name="${x.name}" id="${id}" ${x.required?'required':''}`;let v=x.current??'';let control=x.type==='select'?`<select ${attrs}>${options(x.opts||[],v)}</select>`:x.type==='textarea'?`<textarea ${attrs}>${esc(v)}</textarea>`:`<input ${attrs} type="${x.type}" ${x.type==='number'?'step="any"':''} value="${esc(v)}">`;
 return `<div class="field ${x.type==='textarea'?'wide':''}"><label for="${id}">${esc(x.label)}${x.required?' *':''}</label>${control}${x.name==='qty'&&state.modal?.type==='stock_movements'?'<small>Uma saída de 500 g deve ser informada como -500, nunca +500.</small>':''}</div>`}
 function renderModal(m){let title='',body='',footer='';let existing=m.id?one(m.type,m.id):null;
-if(m.mode==='password'){title='Sua senha de acesso';body=`<p class="muted" style="line-height:1.8;margin:0 0 17px">Defina uma senha exclusiva, diferente da utilizada em outros serviços. Cada administradora tem sua própria senha.</p><form id="password-form"><div class="form-grid"><div class="field wide"><label>Nova senha (mínimo 12 caracteres)</label><input type="password" name="password" minlength="12" required autocomplete="new-password"></div><div class="field wide"><label>Confirmar nova senha</label><input type="password" name="confirm" minlength="12" required autocomplete="new-password"></div></div><div class="modal-foot" style="margin:22px -27px -24px"><button class="btn btn-outline" type="button" data-action="close">Cancelar</button><button class="btn" type="submit">Salvar nova senha →</button></div></form>`;
-}else if(m.mode==='form'||!m.mode){title=(m.id?'Editar ':'Adicionar ')+(LABELS[m.type]||m.type);let fields=formFields(m.type,existing||{},m.context||{});body=`<form id="record-form" data-type="${m.type}" data-id="${esc(m.id||'')}"><div class="form-grid">${fields.map(fieldHTML).join('')}</div><div class="modal-foot" style="margin:22px -27px -24px"><button class="btn btn-outline" type="button" data-action="close">Cancelar</button><button class="btn" type="submit">${m.id?'Salvar alterações':'Cadastrar'} →</button></div></form>`;
+if(m.mode==='quote'){title='Novo orçamento personalizado';body=quoteFormHTML(m.context||{});
+}else if(m.mode==='password'){title='Sua senha de acesso';body=`<p class="muted" style="line-height:1.8;margin:0 0 17px">Defina uma senha exclusiva, diferente da utilizada em outros serviços. Cada administradora tem sua própria senha.</p><form id="password-form"><div class="form-grid"><div class="field wide"><label>Nova senha (mínimo 12 caracteres)</label><input type="password" name="password" minlength="12" required autocomplete="new-password"></div><div class="field wide"><label>Confirmar nova senha</label><input type="password" name="confirm" minlength="12" required autocomplete="new-password"></div></div><div class="modal-foot" style="margin:22px -27px -24px"><button class="btn btn-outline" type="button" data-action="close">Cancelar</button><button class="btn" type="submit">Salvar nova senha →</button></div></form>`;
+}else if(m.mode==='form'||!m.mode){title=(m.id?'Editar ':'Adicionar ')+(LABELS[m.type]||m.type);let fields=formFields(m.type,existing||{},m.context||{});body=`<form id="record-form" data-type="${m.type}" data-id="${esc(m.id||'')}"><div class="form-grid">${fields.map(fieldHTML).join('')}</div>${m.type==='recipes'?recipePhotoForm(existing):''}<div class="modal-foot" style="margin:22px -27px -24px"><button class="btn btn-outline" type="button" data-action="close">Cancelar</button><button class="btn" type="submit">${m.id?'Salvar alterações':'Cadastrar'} →</button></div></form>`;
 if(m.type==='opportunities'&&!get('clients').length||m.type==='events'&&!get('clients').length)body=`<div class="test-notice">Cadastre primeiro um cliente para vincular o evento ou a oportunidade.</div>${body}`;
 if(m.type==='recipe_items'&&!get('ingredients').length)body=`<div class="test-notice">Cadastre ingredientes antes de montar a ficha técnica.</div>${body}`;
 if(m.type==='transfers'&&get('accounts').length<2)body=`<div class="test-notice">Cadastre pelo menos duas contas financeiras.</div>${body}`;
 }else if(m.mode==='opp'){let o=one('opportunities',m.id);if(!o)return'';title=o.title;let related=get('events').find(e=>e.opportunity_id===o.id);body=`<div class="detail-grid"><div class="detail-tile"><small>Cliente</small><strong>${esc(label('clients',o.client_id))}</strong></div><div class="detail-tile"><small>Previsão</small><strong>${dstr(o.event_date)}</strong></div><div class="detail-tile"><small>Orçamento</small><strong>${money(o.estimated_value)}</strong></div></div><hr class="divider"><p style="font-size:12px"><strong>Etapa:</strong> ${esc(stageLabel(o.stage))}</p><p style="font-size:12px"><strong>Próxima ação:</strong> ${esc(o.next_action||'Não definida')} · ${dstr(o.followup_date)}</p><p class="text-area-preview" style="font-size:12px;color:#6a7986">${esc(o.notes||'Sem observações.')}</p>`;footer=`<button class="btn btn-outline" data-action="open" data-type="opportunities" data-id="${o.id}">Editar oportunidade</button>${related?`<button class="btn" data-action="event-detail" data-id="${related.id}">Abrir evento →</button>`:`<button class="btn" data-action="convert" data-id="${o.id}" ${!o.event_date?'disabled title="Defina uma data prevista"':''}>Converter em evento →</button>`}`;
 }else if(m.mode==='event'){let e=one('events',m.id);if(!e)return'';title=e.name;let fin=eventMoney(e.id);let tasks=get('tasks').filter(t=>t.event_id===e.id);body=`<div class="detail-grid"><div class="detail-tile"><small>Contratado</small><strong>${money(e.contracted_amount)}</strong></div><div class="detail-tile"><small>Recebido</small><strong>${money(fin.received)}</strong></div><div class="detail-tile"><small>Pago efetivo</small><strong>${money(fin.spent)}</strong></div><div class="detail-tile"><small>A receber</small><strong>${money(Math.max(0,fin.receivable-fin.received))}</strong></div><div class="detail-tile"><small>A pagar</small><strong>${money(Math.max(0,fin.payable-fin.spent))}</strong></div><div class="detail-tile"><small>Custos previstos</small><strong>${money(e.estimated_cost)}</strong></div></div><hr class="divider"><p style="font-size:12px"><strong>Cliente:</strong> ${esc(label('clients',e.client_id))} · ${dstr(e.event_date)} ${esc(e.start_time?.slice(0,5)||'')} · ${e.guests||0} convidados</p><p style="font-size:12px"><strong>Local:</strong> ${esc(e.venue||'—')} ${esc(e.address||'')}</p><p style="font-size:12px"><strong>Tarefas:</strong> ${tasks.length} (${tasks.filter(t=>t.status==='concluida').length} concluídas)</p><p class="text-area-preview muted">${esc(e.notes||'Sem observações.')}</p>`;footer=`<button class="btn btn-outline" data-action="open" data-type="events" data-id="${e.id}">Editar</button><button class="btn btn-outline" data-action="open" data-type="tasks" data-context-event="${e.id}">＋ Tarefa</button><button class="btn btn-outline" data-action="open" data-type="obligations" data-context-event="${e.id}" data-context-kind="receber">＋ Cobrança</button><button class="btn" data-action="open" data-type="menus" data-context-event="${e.id}">＋ Menu</button>`;
-}else if(m.mode==='recipe'){let r=one('recipes',m.id);if(!r)return'';title=r.name;let items=get('recipe_items').filter(i=>i.recipe_id===r.id);body=`<div class="detail-grid"><div class="detail-tile"><small>Custo total</small><strong>${money(recipeCost(r.id))}</strong></div><div class="detail-tile"><small>Rendimento</small><strong>${num(r.yield_qty)} porções</strong></div><div class="detail-tile"><small>Custo por porção</small><strong>${money(recipeCost(r.id)/num(r.yield_qty))}</strong></div></div><hr class="divider"><div class="panel-top"><h3>Ingredientes desta receita</h3><button class="btn btn-soft btn-xs" data-action="open" data-type="recipe_items" data-context-recipe="${r.id}">＋ Ingrediente</button></div><div class="stock-list head"><span>Ingrediente</span><span>Quantidade</span><span>Custo</span><span>Ação</span></div>${items.map(i=>{let ing=one('ingredients',i.ingredient_id);return `<div class="stock-list"><strong>${esc(ing?.name||'—')}</strong><span>${num(i.qty)} ${esc(ing?.unit||'')}</span><span>${money(ing?num(i.qty)*num(ing.pack_price)/num(ing.pack_qty):0)}</span><button class="row-action" data-action="remove-item" data-table="recipe_items" data-id="${i.id}">Remover</button></div>`}).join('')||empty('Adicione os ingredientes e respectivas quantidades.')}`;footer=`<button class="btn btn-outline" data-action="open" data-type="recipes" data-id="${r.id}">Editar ficha</button><button class="btn" data-action="open" data-type="recipe_items" data-context-recipe="${r.id}">＋ Adicionar ingrediente</button>`;
-}else if(m.mode==='menu'){let menu=one('menus',m.id);if(!menu)return'';title=menu.name;let items=get('menu_items').filter(i=>i.menu_id===menu.id).sort((a,b)=>num(a.sort_order)-num(b.sort_order));let req=requiredForMenu(menu);body=`<div class="detail-grid"><div class="detail-tile"><small>Proposta comercial</small><strong>${money(menu.price)}</strong></div><div class="detail-tile"><small>Custo projetado</small><strong>${money(menuCost(menu.id))}</strong></div><div class="detail-tile"><small>Margem projetada</small><strong>${num(menu.price)>0?((num(menu.price)-menuCost(menu.id))/num(menu.price)*100).toFixed(1)+'%':'—'}</strong></div></div><hr class="divider"><div class="panel-top"><h3>Preparações escolhidas</h3><button class="btn btn-soft btn-xs" data-action="open" data-type="menu_items" data-context-menu="${menu.id}">＋ Preparação</button></div>${items.map(i=>`<div class="list-row"><div><strong>${esc(label('recipes',i.recipe_id))}</strong><span>${num(i.portions)} porções · custo interno ${money(num(i.portions)*recipeCost(i.recipe_id)/num(one('recipes',i.recipe_id)?.yield_qty||1))}</span></div><button class="row-action" data-action="remove-item" data-table="menu_items" data-id="${i.id}">Remover</button></div>`).join('')||empty('Nenhuma preparação selecionada.')}<hr class="divider"><div class="panel-top"><h3>Lista de compras estimada</h3><small>Consolidada por ingrediente</small></div>${req.length?`<div class="stock-list head"><span>Ingrediente</span><span>Necessário</span><span>Estoque</span><span>Comprar</span></div>${req.map(x=>`<div class="stock-list"><strong>${esc(x.ingredient.name)}</strong><span>${num(x.qty).toFixed(1)} ${x.ingredient.unit}</span><span>${num(x.stock).toFixed(1)} ${x.ingredient.unit}</span><strong>${num(x.buy).toFixed(1)} ${x.ingredient.unit}</strong></div>`).join('')}`:empty('Selecione preparações para calcular compras.')}`;footer=`<button class="btn btn-outline" data-action="open" data-type="menus" data-id="${menu.id}">Editar</button><button class="btn btn-outline" data-action="make-purchases" data-id="${menu.id}" ${!req.some(x=>x.buy>0)?'disabled':''}>Gerar compras</button><button class="btn" data-action="preview-menu" data-id="${menu.id}">Prévia / PDF ↗</button>`;
+}else if(m.mode==='recipe'){let r=one('recipes',m.id);if(!r)return'';title=r.name;let items=get('recipe_items').filter(i=>i.recipe_id===r.id);body=`<div class="recipe-detail-head">${photoCardHtml(r,'recipe-detail-cover')}<div><div class="kicker">${esc(r.category||'Preparação')}</div><p class="muted" style="line-height:1.7">${esc(r.description||'Ficha técnica da Éden.')}</p></div></div><div class="detail-grid"><div class="detail-tile"><small>Custo total</small><strong>${money(recipeCost(r.id))}</strong></div><div class="detail-tile"><small>Rendimento</small><strong>${num(r.yield_qty)} porções</strong></div><div class="detail-tile"><small>Custo por porção</small><strong>${money(recipeCost(r.id)/num(r.yield_qty))}</strong></div></div><hr class="divider"><div class="panel-top"><h3>Ingredientes desta receita</h3><button class="btn btn-soft btn-xs" data-action="open" data-type="recipe_items" data-context-recipe="${r.id}">＋ Ingrediente</button></div><div class="stock-list head"><span>Ingrediente</span><span>Quantidade</span><span>Custo</span><span>Ação</span></div>${items.map(i=>{let ing=one('ingredients',i.ingredient_id);return `<div class="stock-list"><strong>${esc(ing?.name||'—')}</strong><span>${num(i.qty)} ${esc(ing?.unit||'')}</span><span>${money(ing?num(i.qty)*num(ing.pack_price)/num(ing.pack_qty):0)}</span><button class="row-action" data-action="remove-item" data-table="recipe_items" data-id="${i.id}">Remover</button></div>`}).join('')||empty('Adicione os ingredientes e respectivas quantidades.')}`;footer=`<button class="btn btn-outline" data-action="open" data-type="recipes" data-id="${r.id}">Editar ficha</button><button class="btn" data-action="open" data-type="recipe_items" data-context-recipe="${r.id}">＋ Adicionar ingrediente</button>`;
+}else if(m.mode==='menu'){let menu=one('menus',m.id);if(!menu)return'';title=menu.name;let items=get('menu_items').filter(i=>i.menu_id===menu.id).sort((a,b)=>num(a.sort_order)-num(b.sort_order));let req=requiredForMenu(menu);body=`<div class="detail-grid"><div class="detail-tile"><small>Proposta comercial</small><strong>${money(menu.price)}</strong></div><div class="detail-tile"><small>Custo projetado</small><strong>${money(menuCost(menu.id))}</strong></div><div class="detail-tile"><small>Margem projetada</small><strong>${num(menu.price)>0?((num(menu.price)-menuCost(menu.id))/num(menu.price)*100).toFixed(1)+'%':'—'}</strong></div></div><hr class="divider"><div class="panel-top"><h3>Preparações escolhidas</h3><button class="btn btn-soft btn-xs" data-action="open" data-type="menu_items" data-context-menu="${menu.id}">＋ Preparação</button></div>${items.map(i=>`<div class="list-row quote-detail-row">${photoCardHtml(one('recipes',i.recipe_id),'quote-detail-thumb')}<div><strong>${esc(label('recipes',i.recipe_id))}</strong><span>${esc(one('recipes',i.recipe_id)?.category||'Preparação')} · ${num(i.portions)} porções · custo interno ${money(num(i.portions)*recipeCost(i.recipe_id)/num(one('recipes',i.recipe_id)?.yield_qty||1))}</span></div><button class="row-action" data-action="remove-item" data-table="menu_items" data-id="${i.id}">Remover</button></div>`).join('')||empty('Nenhuma preparação selecionada.')}<hr class="divider"><div class="panel-top"><h3>Lista de compras estimada</h3><small>Consolidada por ingrediente</small></div>${req.length?`<div class="stock-list head"><span>Ingrediente</span><span>Necessário</span><span>Estoque</span><span>Comprar</span></div>${req.map(x=>`<div class="stock-list"><strong>${esc(x.ingredient.name)}</strong><span>${num(x.qty).toFixed(1)} ${x.ingredient.unit}</span><span>${num(x.stock).toFixed(1)} ${x.ingredient.unit}</span><strong>${num(x.buy).toFixed(1)} ${x.ingredient.unit}</strong></div>`).join('')}`:empty('Selecione preparações para calcular compras.')}`;footer=`<button class="btn btn-outline" data-action="open" data-type="menus" data-id="${menu.id}">Editar</button><button class="btn btn-outline" data-action="make-purchases" data-id="${menu.id}" ${!req.some(x=>x.buy>0)?'disabled':''}>Gerar compras</button><button class="btn" data-action="preview-menu" data-id="${menu.id}">Prévia / PDF ↗</button>`;
 }else if(m.mode==='bill'){let bill=one('obligations',m.id);if(!bill)return'';title=bill.description;let installments=get('settlements').filter(s=>s.obligation_id===bill.id).sort((a,b)=>b.paid_on.localeCompare(a.paid_on));body=`<div class="detail-grid"><div class="detail-tile"><small>Total previsto</small><strong>${money(bill.amount)}</strong></div><div class="detail-tile"><small>Valor realizado</small><strong>${money(paid(bill))}</strong></div><div class="detail-tile"><small>Em aberto</small><strong>${money(remaining(bill))}</strong></div></div><hr class="divider"><div class="panel-top"><h3>Histórico de pagamentos / recebimentos</h3><small>Não é possível apagar liquidações</small></div>${installments.map(s=>`<div class="list-row"><div><strong>${money(s.amount)} ${s.reversed_at?badge('ESTORNADO','danger'):''}</strong><span>${dstr(s.paid_on)} · ${esc(label('accounts',s.account_id))} · ${esc(s.method)}</span></div>${!s.reversed_at?`<button class="row-action" data-action="reverse" data-id="${s.id}">Estornar</button>`:''}</div>`).join('')||empty('Sem liquidações registradas.')}`;footer=`${remaining(bill)>.005&&!bill.canceled?`<button class="btn" data-action="settle" data-id="${bill.id}">Registrar liquidação</button>`:''}`;
 }else if(m.mode==='settle'){let b=one('obligations',m.id);if(!b)return'';title=b.kind==='receber'?'Registrar recebimento':'Registrar pagamento';body=`<div class="test-notice">Saldo disponível para liquidar: <strong>${money(remaining(b))}</strong>. A movimentação afetará a conta escolhida somente após salvar.</div><form id="settle-form" data-id="${b.id}"><div class="form-grid"><div class="field"><label>Conta financeira *</label><select name="account_id" required>${listOptions('accounts')}</select></div><div class="field"><label>Valor liquidado (R$) *</label><input type="number" name="amount" min="0.01" max="${remaining(b).toFixed(2)}" step="0.01" required value="${remaining(b).toFixed(2)}"></div><div class="field"><label>Data efetiva *</label><input type="date" name="paid_on" required value="${today()}"></div><div class="field"><label>Meio de pagamento</label><select name="method">${options([['pix','Pix'],['transferencia','Transferência'],['dinheiro','Dinheiro'],['cartao','Cartão'],['boleto','Boleto'],['outro','Outro']],'pix','Selecione')}</select></div><div class="field wide"><label>Observações</label><textarea name="notes"></textarea></div></div><div class="modal-foot" style="margin:22px -27px -24px"><button type="button" class="btn btn-outline" data-action="close">Voltar</button><button class="btn" type="submit">Registrar valor realizado</button></div></form>`;
 }else if(m.mode==='preview'){let menu=one('menus',m.id);if(!menu)return'';title='Prévia comercial · '+menu.name;body=`<div class="doc-sheet" style="min-height:560px">${commercialHTML(menu)}</div>`;footer=`<button class="btn btn-outline" data-action="menu-detail" data-id="${menu.id}">Voltar ao menu</button><button class="btn" data-action="print-menu" data-id="${menu.id}">Imprimir / salvar PDF ↗</button>`;
 }
-return `<div class="modal-back" data-backdrop="1"><div class="modal ${['menu','recipe','event','preview'].includes(m.mode)?'wide':''}" role="dialog" aria-modal="true" aria-label="${esc(title)}"><div class="modal-head"><h2>${esc(title)}</h2><button class="icon-close" data-action="close" aria-label="Fechar">×</button></div><div class="modal-body">${body}</div>${footer?`<div class="modal-foot">${footer}</div>`:''}</div></div>`;
+return `<div class="modal-back" data-backdrop="1"><div class="modal ${['menu','recipe','event','preview','quote'].includes(m.mode)?'wide':''}" role="dialog" aria-modal="true" aria-label="${esc(title)}"><div class="modal-head"><h2>${esc(title)}</h2><button class="icon-close" data-action="close" aria-label="Fechar">×</button></div><div class="modal-body">${body}</div>${footer?`<div class="modal-foot">${footer}</div>`:''}</div></div>`;
 }
-function commercialHTML(menu){let items=get('menu_items').filter(x=>x.menu_id===menu.id).sort((a,b)=>num(a.sort_order)-num(b.sort_order));return `<div class="doc-brand"><span class="eden-logo" role="img" aria-label="Éden Experiências Gastronômicas"></span></div><div class="doc-kicker">Uma experiência feita para você</div><h1>${esc(menu.name)}</h1><p class="text-area-preview" style="color:#647587;line-height:1.9;font-size:13px">${esc(menu.description||'Uma seleção especial de preparações para transformar encontros em experiências inesquecíveis.')}</p><div class="doc-kicker">Seleção gastronômica</div>${items.map(item=>{let recipe=one('recipes',item.recipe_id);return `<div class="doc-item"><strong>${esc(recipe?.name||'Preparação')}</strong><p>${esc(recipe?.description||'Preparação artesanal da Éden.')}</p></div>`}).join('')||'<p>Nenhuma preparação selecionada.</p>'}<div class="doc-kicker">Sua proposta</div><p style="font-size:13px;line-height:1.9">${esc(label('clients',menu.client_id))!=='—'?`Preparado para ${esc(label('clients',menu.client_id))} · `:''}${num(menu.guests)} convidados</p><p style="font:27px 'DM Serif Display'">${money(menu.price)}</p><p class="text-area-preview" style="color:#647587;font-size:11px">${esc(menu.notes||'Proposta personalizada conforme as condições combinadas.')}</p><div class="doc-footer">ÉDEN · GASTRONOMIA & EXPERIÊNCIAS</div>`}
-function showModal(mode,type,id=null,context={}){if(mode==='form'&&type==='events'&&!id)context={status:'confirmado',...context};state.modal={mode,type,id,context};render();setTimeout(()=>$$('.modal-body input:not([type="hidden"]),.modal-body select')?.focus(),20)}
-function closeModal(){state.modal=null;render()}
-async function saveRecord(form){let type=form.dataset.type,id=form.dataset.id;let fields=formFields(type,one(type,id)||{},state.modal?.context||{});let fd=new FormData(form);let obj={};for(let x of fields){let v=fd.get(x.name);if(x.type==='number')v=v===''?null:Number(String(v).replace(',','.'));else if(x.type==='select'&&v==='')v=null;else if(['date','time'].includes(x.type)&&v==='')v=null;obj[x.name]=v}if(type==='events'&&!obj.status)obj.status='confirmado';if(type==='purchases'&&!id)obj.status='planejada';if(type==='stock_movements'&&num(obj.qty)===0)throw Error('A movimentação precisa ter quantidade diferente de zero');if(type==='stock_movements'&&obj.reason==='consumo'&&num(obj.qty)>0)throw Error('Consumo deve ser registrado como quantidade negativa');if(type==='stock_movements'&&obj.reason==='perda'&&num(obj.qty)>0)throw Error('Perdas devem usar valores negativos');if(type==='transfers'&&obj.from_account===obj.to_account)throw Error('As contas de origem e destino precisam ser diferentes');if(type==='obligations'&&!id)obj.canceled=false;
-const query=id?state.db.from(type).update(obj).eq('id',id):state.db.from(type).insert(obj);let {error}=await query;if(error)throw error;let returnModal=type==='recipe_items'?'recipe':type==='menu_items'?'menu':null;let returnId=returnModal?(type==='recipe_items'?obj.recipe_id:obj.menu_id):null;await loadAll();if(returnModal)showModal(returnModal,null,returnId);else{state.modal=null;render()}toast(`${LABELS[type]||'Registro'} ${id?'atualizado':'cadastrado'} com sucesso.`)}
+function commercialHTML(menu){let items=get('menu_items').filter(x=>x.menu_id===menu.id).sort((a,b)=>num(a.sort_order)-num(b.sort_order));return `<div class="doc-brand"><span class="eden-logo" role="img" aria-label="Éden Experiências Gastronômicas"></span></div><div class="doc-kicker">Uma experiência feita para você</div><h1>${esc(menu.name)}</h1><p class="text-area-preview" style="color:#647587;line-height:1.9;font-size:13px">${esc(menu.description||'Uma seleção especial de preparações para transformar encontros em experiências inesquecíveis.')}</p><div class="doc-kicker">Seleção gastronômica</div>${items.map(item=>{let recipe=one('recipes',item.recipe_id);return `<div class="doc-item quote-doc-item">${photoCardHtml(recipe,'quote-doc-photo')}<div class="quote-doc-copy"><span class="quote-doc-kind">${esc(recipe?.category||'Preparação')}</span><strong>${esc(recipe?.name||'Preparação')}</strong><p>${esc(recipe?.description||'Preparação artesanal da Éden.')}</p></div></div>`}).join('')||'<p>Nenhuma preparação selecionada.</p>'}<div class="doc-kicker">Sua proposta</div><p style="font-size:13px;line-height:1.9">${esc(label('clients',menu.client_id))!=='—'?`Preparado para ${esc(label('clients',menu.client_id))} · `:''}${num(menu.guests)} convidados</p><p style="font:27px 'DM Serif Display'">${money(menu.price)}</p><p class="text-area-preview" style="color:#647587;font-size:11px">${esc(menu.notes||'Proposta personalizada conforme as condições combinadas.')}</p><div class="doc-footer">ÉDEN · GASTRONOMIA & EXPERIÊNCIAS</div>`}
+function showModal(mode,type,id=null,context={}){clearTemporaryPhoto();state.mobilePanel=null;if(mode==='form'&&type==='events'&&!id)context={status:'confirmado',...context};state.modal={mode,type,id,context};render();setTimeout(()=>$$('.modal-body input:not([type="hidden"]),.modal-body select')?.focus(),20)}
+function closeModal(){clearTemporaryPhoto();state.modal=null;render()}
+async function saveRecord(form){
+ let type=form.dataset.type,id=form.dataset.id;
+ let fields=formFields(type,one(type,id)||{},state.modal?.context||{});
+ let fd=new FormData(form),obj={};
+ for(let x of fields){let v=fd.get(x.name);if(x.type==='number')v=v===''?null:Number(String(v).replace(',','.'));else if(x.type==='select'&&v==='')v=null;else if(['date','time'].includes(x.type)&&v==='')v=null;obj[x.name]=v}
+ if(type==='events'&&!obj.status)obj.status='confirmado';
+ if(type==='purchases'&&!id)obj.status='planejada';
+ if(type==='stock_movements'&&num(obj.qty)===0)throw Error('A movimentação precisa ter quantidade diferente de zero');
+ if(type==='stock_movements'&&obj.reason==='consumo'&&num(obj.qty)>0)throw Error('Consumo deve ser registrado como quantidade negativa');
+ if(type==='stock_movements'&&obj.reason==='perda'&&num(obj.qty)>0)throw Error('Perdas devem usar valores negativos');
+ if(type==='transfers'&&obj.from_account===obj.to_account)throw Error('As contas de origem e destino precisam ser diferentes');
+ if(type==='obligations'&&!id)obj.canceled=false;
+ let uploadedPath=null,oldPath=type==='recipes'?String(one('recipes',id)?.photo_url||''):'';
+ if(type==='recipes'){
+   if(!RECIPE_TYPES.some(([code])=>code===obj.category))throw Error('Escolha Bebida, Menu doce ou Menu salgado.');
+   const file=fd.get('recipe_photo'),remove=fd.get('remove_photo')==='1';
+   const hasFile=file instanceof File && file.size>0;
+   if(hasFile){
+     const processed=await optimizedPhoto(file);
+     const recordId=id||makeUUID();
+     const path=`receitas/${recordId}/${makeUUID()}.${processed.extension}`;
+     const {error:uploadError}=await state.db.storage.from(PHOTO_BUCKET).upload(path,processed.blob,{contentType:processed.mime,cacheControl:'3600',upsert:false});
+     if(uploadError)throw Error('Não foi possível salvar a foto no Supabase Storage. Verifique se executou o SQL 03 e as permissões: '+uploadError.message);
+     uploadedPath=path;
+     if(!id)obj.id=recordId;
+     obj.photo_url=path;
+   }else if(remove){obj.photo_url=''}
+ }
+ try{
+   const query=id?state.db.from(type).update(obj).eq('id',id):state.db.from(type).insert(obj);
+   const {error}=await query;if(error)throw error;
+ }catch(error){
+   if(uploadedPath){try{await state.db.storage.from(PHOTO_BUCKET).remove([uploadedPath])}catch(e){console.warn('Falha ao limpar foto após erro:',e)}}
+   throw error;
+ }
+ if(type==='recipes'&&(uploadedPath||obj.photo_url==='')&&isStoragePhoto(oldPath)&&oldPath!==uploadedPath){
+   try{await state.db.storage.from(PHOTO_BUCKET).remove([oldPath]);photoCache.delete(oldPath)}catch(e){console.warn('Foto anterior não pôde ser removida:',e)}
+ }
+ let returnModal=type==='recipe_items'?'recipe':type==='menu_items'?'menu':null;
+ let returnId=returnModal?(type==='recipe_items'?obj.recipe_id:obj.menu_id):null;
+ clearTemporaryPhoto();
+ await loadAll();
+ if(returnModal)showModal(returnModal,null,returnId);
+ else{state.modal=null;render()}
+ toast(`${LABELS[type]||'Registro'} ${id?'atualizado':'cadastrado'} com sucesso.`);
+}
 async function saveSettlement(form){let id=form.dataset.id,b=one('obligations',id);if(!b)throw Error('Conta não encontrada');let fd=new FormData(form);let amount=Number(fd.get('amount'));if(!(amount>0)||amount>remaining(b)+.001)throw Error('O pagamento excede o valor pendente.');const {error}=await state.db.from('settlements').insert({obligation_id:id,account_id:fd.get('account_id'),amount,paid_on:fd.get('paid_on'),method:fd.get('method'),notes:fd.get('notes')});if(error)throw error;await loadAll();state.modal=null;render();toast('Liquidação registrada. Caixa atualizado.')}
 async function updateRow(table,id,change){const {error}=await state.db.from(table).update(change).eq('id',id);if(error)throw error;await loadAll()}
 async function convertOpportunity(id){let o=one('opportunities',id);if(!o)return;if(!o.event_date)throw Error('Preencha uma data prevista antes de converter.');if(get('events').some(e=>e.opportunity_id===id)){toast('Esta oportunidade já possui evento.',true);return}let {data,error}=await state.db.from('events').insert({client_id:o.client_id,opportunity_id:o.id,name:o.title,event_date:o.event_date,guests:o.guests,service:o.service,contracted_amount:o.estimated_value,status:'confirmado',notes:o.notes}).select('id').single();if(error)throw error;const {error:stageErr}=await state.db.from('opportunities').update({stage:'confirmado'}).eq('id',id);if(stageErr)toast('Evento criado, mas não foi possível atualizar o funil.',true);await loadAll();state.modal=null;render();if(data?.id)showModal('event',null,data.id);toast('Evento criado e conectado ao cliente e à oportunidade.')}
@@ -413,15 +865,20 @@ async function generatePurchases(menuId){let m=one('menus',menuId),items=require
 function downloadCSV(){let rows=[['Data','Tipo','Descrição','Evento','Categoria','Conta','Valor R$'],...movements().sort((a,b)=>a.paid_on.localeCompare(b.paid_on)).map(m=>[dstr(m.paid_on),m.kind,m.description||'',label('events',m.event_id),m.category||'',label('accounts',m.account_id),m.signed.toFixed(2).replace('.',',')])];let csv='\uFEFF'+rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');let url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));let a=document.createElement('a');a.href=url;a.download=`eden_financeiro_${today()}.csv`;a.click();URL.revokeObjectURL(url)}
 function printMenu(id){let m=one('menus',id);if(!m)return;let div=document.createElement('div');div.id='print-root';div.innerHTML=`<div class="doc-sheet">${commercialHTML(m)}</div>`;document.body.append(div);window.print();setTimeout(()=>div.remove(),1500)}
 async function handleAction(el){let action=el.dataset.action,id=el.dataset.id,type=el.dataset.type;switch(action){
- case'nav':state.view=el.dataset.view;state.search='';state.modal=null;render();break;
+ case'nav':state.view=el.dataset.view;state.search='';state.modal=null;state.mobilePanel=null;if(state.view==='recipes'||state.view==='menus')await ensureRecipePhotos();window.scrollTo({top:0,behavior:'instant'});render();break;
+ case'mobile-panel':state.mobilePanel=state.mobilePanel===el.dataset.panel?null:el.dataset.panel;render();break;
+ case'close-mobile-panel':state.mobilePanel=null;render();break;
  case'backup':exportCloudBackup();break;
- case'change-password':showModal('password');break;
+ case'change-password':state.mobilePanel=null;showModal('password');break;
  case'logout':await logout();break;
- case'open':{let context={};if(el.dataset.contextEvent)context.event_id=el.dataset.contextEvent;if(el.dataset.contextRecipe)context.recipe_id=el.dataset.contextRecipe;if(el.dataset.contextMenu)context.menu_id=el.dataset.contextMenu;if(el.dataset.contextKind)context.kind=el.dataset.contextKind;
+ case'open':{state.mobilePanel=null;if(type==='quote'){quoteStart();break}let context={};if(el.dataset.contextEvent)context.event_id=el.dataset.contextEvent;if(el.dataset.contextRecipe)context.recipe_id=el.dataset.contextRecipe;if(el.dataset.contextMenu)context.menu_id=el.dataset.contextMenu;if(el.dataset.contextKind)context.kind=el.dataset.contextKind;
  if(type==='menus'&&context.event_id){let e=one('events',context.event_id);context.client_id=e?.client_id;context.guests=e?.guests;context.name='Menu · '+e?.name}
  if(type==='obligations'&&context.event_id){let e=one('events',context.event_id);context.client_id=e?.client_id;context.amount=e?.contracted_amount;context.description='Serviço gastronômico · '+e?.name;context.due_date=e?.event_date}
  showModal('form',type,id||null,context);break}
  case'close':closeModal();break;
+ case'remove-recipe-photo':removePhotoSelection(el);break;
+ case'recipe-category':state.recipeCategory=el.dataset.category;render();break;
+ case'quote-new':quoteStart(el.dataset.recipe||'');break;
  case'opp-detail':showModal('opp',null,id);break;
  case'event-detail':showModal('event',null,id);break;
  case'recipe-detail':showModal('recipe',null,id);break;
@@ -446,13 +903,34 @@ async function handleAction(el){let action=el.dataset.action,id=el.dataset.id,ty
  }}
 // Delegação mantém funcionais todas as telas, inclusive conteúdo recriado após salvar.
 document.addEventListener('click',async e=>{if(e.target?.dataset?.backdrop==='1'){closeModal();return}let button=e.target.closest('[data-action]');if(!button)return;e.preventDefault();if(button.disabled)return;try{await handleAction(button)}catch(err){toast(errorMessage(err),true)}});
-document.addEventListener('change',async e=>{if(e.target.matches('[data-toggle-task]')){try{await updateRow('tasks',e.target.dataset.toggleTask,{status:e.target.checked?'concluida':'pendente'});toast('Tarefa atualizada.')}catch(err){toast(errorMessage(err),true)}}});
+document.addEventListener('change',async e=>{
+ if(e.target.id==='recipe-photo-input'){previewSelectedPhoto(e.target);return}
+ if(e.target.matches('#quote-form [name=quote_recipe]')){
+   e.target.closest('.quote-choice')?.classList.toggle('selected',e.target.checked);
+   const n=document.querySelectorAll('#quote-form [name=quote_recipe]:checked').length;
+   const counter=document.getElementById('quote-selected-count');if(counter)counter.textContent=n+' '+(n===1?'selecionada':'selecionadas');
+   return;
+ }
+ if(e.target.matches('#quote-event')){
+   const event=one('events',e.target.value);if(event){const form=e.target.closest('form');if(event.client_id)form.elements.client_id.value=event.client_id;if(event.guests>0)form.elements.guests.value=event.guests}
+   return;
+ }
+ if(e.target.matches('[data-mobile-stage]')){state.mobileStage=e.target.value;render();return}
+ if(e.target.matches('[data-mobile-opp-stage]')){
+  const id=e.target.dataset.mobileOppStage,stage=e.target.value;
+  e.target.disabled=true;
+  try{await updateRow('opportunities',id,{stage});toast('Etapa atualizada para as duas administradoras.')}
+  catch(err){toast(errorMessage(err),true);render()}
+  return;
+ }
+ if(e.target.matches('[data-toggle-task]')){try{await updateRow('tasks',e.target.dataset.toggleTask,{status:e.target.checked?'concluida':'pendente'});toast('Tarefa atualizada.')}catch(err){toast(errorMessage(err),true)}}
+});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&state.modal)closeModal();if(e.key==='Enter'&&e.target.id==='search-field'){e.preventDefault();state.search=e.target.value.trim();render()}});
 document.addEventListener('dragstart',e=>{let card=e.target.closest('[data-drag-id]');if(card&&e.dataTransfer){e.dataTransfer.setData('text/plain',card.dataset.dragId);e.dataTransfer.effectAllowed='move'}});
 document.addEventListener('dragover',e=>{let lane=e.target.closest('[data-drop-stage]');if(lane){e.preventDefault();lane.classList.add('drag-over')}});
 document.addEventListener('dragleave',e=>{let lane=e.target.closest('[data-drop-stage]');if(lane&&!lane.contains(e.relatedTarget))lane.classList.remove('drag-over')});
 document.addEventListener('drop',async e=>{let lane=e.target.closest('[data-drop-stage]');if(!lane)return;e.preventDefault();lane.classList.remove('drag-over');let id=e.dataTransfer?.getData('text/plain');if(!id)return;try{await updateRow('opportunities',id,{stage:lane.dataset.dropStage});toast('Etapa da oportunidade atualizada.')}catch(err){toast(errorMessage(err),true)}});
-document.addEventListener('submit',async e=>{let form=e.target;if(!['auth-form','record-form','settle-form','password-form'].includes(form.id))return;e.preventDefault();if(form.dataset.busy==='1')return;form.dataset.busy='1';let submits=[...form.querySelectorAll('button[type="submit"],button:not([type])')];submits.forEach(b=>b.disabled=true);
+document.addEventListener('submit',async e=>{let form=e.target;if(!['auth-form','record-form','settle-form','password-form','quote-form'].includes(form.id))return;e.preventDefault();if(form.dataset.busy==='1')return;form.dataset.busy='1';let submits=[...form.querySelectorAll('button[type="submit"],button:not([type])')];submits.forEach(b=>b.disabled=true);
 try{if(form.id==='auth-form'){
  const fd=new FormData(form),email=String(fd.get('email')||'').trim(),password=String(fd.get('password')||'');
  const {data,error}=await state.db.auth.signInWithPassword({email,password});
@@ -469,6 +947,7 @@ if(form.id==='password-form'){
  state.modal=null;render();toast('Sua senha foi atualizada. Não a compartilhe.');return;
 }
 if(form.id==='record-form')await saveRecord(form);
+if(form.id==='quote-form')await saveQuote(form);
 if(form.id==='settle-form')await saveSettlement(form)
 }catch(err){toast(errorMessage(err),true)}finally{if(form.isConnected){form.dataset.busy='0';submits.forEach(b=>b.disabled=false)}}});
 init();
