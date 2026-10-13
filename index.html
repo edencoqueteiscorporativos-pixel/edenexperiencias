@@ -1031,7 +1031,7 @@ function proposalPagesHTML(menu){
 }
 function proposalPreview(){
  const menu=one('menus',state.proposalId);if(!menu)return `${section('Propostas comerciais','Selecione um orçamento existente.',`<button class="btn" data-action="proposal-back">Voltar</button>`)}`;
- return `<div class="proposal-workspace"><div class="proposal-page-heading"><div><div class="top-eyebrow">VISUALIZAÇÃO COMERCIAL · SEM CUSTOS INTERNOS</div><h2>Proposta para ${esc(menu.client_display||label('clients',menu.client_id))}</h2><p>${num(menu.guests)} convidados · ${proposalPriceDisplay(menu)} · ${menu.event_date?dstr(menu.event_date):'Data a definir'}</p></div><div class="proposal-preview-actions"><button class="btn btn-outline" data-action="proposal-back">← Todos</button><button class="btn btn-outline" data-action="proposal-edit" data-id="${menu.id}">Editar orçamento</button><button class="btn" data-action="print-menu" data-id="${menu.id}">↓ Gerar PDF</button></div></div><div class="proposal-pdf-preview">${proposalPagesHTML(menu)}</div><div class="proposal-pdf-help">Ao clicar em <strong>Gerar PDF</strong>, escolha <strong>Salvar como PDF</strong> na tela de impressão. Ative “gráficos de plano de fundo” para manter o fundo bege da identidade Éden. As páginas seguem o modelo comercial enviado.</div></div>`;
+ return `<div class="proposal-workspace"><div class="proposal-page-heading"><div><div class="top-eyebrow">VISUALIZAÇÃO COMERCIAL · SEM CUSTOS INTERNOS</div><h2>Proposta para ${esc(menu.client_display||label('clients',menu.client_id))}</h2><p>${num(menu.guests)} convidados · ${proposalPriceDisplay(menu)} · ${menu.event_date?dstr(menu.event_date):'Data a definir'}</p></div><div class="proposal-preview-actions"><button class="btn btn-outline" data-action="proposal-back">← Todos</button><button class="btn btn-outline" data-action="proposal-edit" data-id="${menu.id}">Editar orçamento</button><button class="btn" data-action="print-menu" data-id="${menu.id}">↓ Gerar PDF</button></div></div><div class="proposal-pdf-preview">${proposalPagesHTML(menu)}</div><div class="proposal-pdf-help">Ao clicar em <strong>Gerar PDF</strong>, escolha <strong>Salvar como PDF</strong> na tela de impressão. O nome sugerido será <strong>Éden &amp; Nome do Cliente.pdf</strong>. Ative “gráficos de plano de fundo” para manter o fundo bege da identidade Éden. As páginas seguem o modelo comercial enviado.</div></div>`;
 }
 function menus(){
  const budgets=[...get('menus')].sort((a,b)=>String(b.issued_on||b.created_at||'').localeCompare(String(a.issued_on||a.created_at||'')));
@@ -1145,14 +1145,32 @@ async function updateRow(table,id,change){const {error}=await state.db.from(tabl
 async function convertOpportunity(id){let o=one('opportunities',id);if(!o)return;if(!o.event_date)throw Error('Preencha uma data prevista antes de converter.');if(get('events').some(e=>e.opportunity_id===id)){toast('Esta oportunidade já possui evento.',true);return}let {data,error}=await state.db.from('events').insert({client_id:o.client_id,opportunity_id:o.id,name:o.title,event_date:o.event_date,guests:o.guests,service:o.service,contracted_amount:o.estimated_value,status:'confirmado',notes:o.notes}).select('id').single();if(error)throw error;const {error:stageErr}=await state.db.from('opportunities').update({stage:'confirmado'}).eq('id',id);if(stageErr)toast('Evento criado, mas não foi possível atualizar o funil.',true);await loadAll();state.modal=null;render();if(data?.id)showModal('event',null,data.id);toast('Evento criado e conectado ao cliente e à oportunidade.')}
 async function generatePurchases(menuId){let m=one('menus',menuId),items=requiredForMenu(m).filter(x=>x.buy>.0001);if(!items.length)throw Error('Não há itens a comprar.');if(!confirm(`Criar ${items.length} compras planejadas para este menu? Nenhuma despesa real será registrada agora.`))return;let rows=items.map(x=>({ingredient_id:x.id,event_id:m.event_id||null,supplier:x.ingredient.supplier||'',qty:Math.ceil(x.buy/num(x.ingredient.pack_qty))*num(x.ingredient.pack_qty),unit_price:num(x.ingredient.pack_price)/num(x.ingredient.pack_qty),purchase_date:today(),status:'planejada',notes:`Projeção a partir do menu: ${m.name}`}));let {error}=await state.db.from('purchases').insert(rows);if(error)throw error;await loadAll();state.modal=null;state.view='purchases';render();toast(`${rows.length} compras planejadas criadas. Ainda não afetam estoque nem caixa.`)}
 function downloadCSV(){let rows=[['Data','Tipo','Descrição','Evento','Categoria','Conta','Valor R$'],...movements().sort((a,b)=>a.paid_on.localeCompare(b.paid_on)).map(m=>[dstr(m.paid_on),m.kind,m.description||'',label('events',m.event_id),m.category||'',label('accounts',m.account_id),m.signed.toFixed(2).replace('.',',')])];let csv='\uFEFF'+rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');let url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));let a=document.createElement('a');a.href=url;a.download=`eden_financeiro_${today()}.csv`;a.click();URL.revokeObjectURL(url)}
+function proposalPdfName(menu){
+ // O nome sugerido para salvar o PDF usa o cliente do próprio orçamento.
+ // Remove caracteres que não são aceitos como nome de arquivo no Windows/macOS.
+ let client=String(menu?.client_display||label('clients',menu?.client_id)||'').trim();
+ if(!client||client==='—')client='Cliente';
+ client=client.replace(/[\\/<>:"|?*\x00-\x1F]/g,' - ').replace(/\s+/g,' ').replace(/[. ]+$/g,'').slice(0,100).trim()||'Cliente';
+ return `Éden & ${client}`;
+}
 function printMenu(id){
  let m=one('menus',id);if(!m)return;
  document.getElementById('print-root')?.remove();
  let div=document.createElement('div');div.id='print-root';div.innerHTML=proposalPagesHTML(m);document.body.append(div);
- // Impressão nativa mantém as páginas A4 do modelo. O usuário seleciona "Salvar como PDF".
- window.addEventListener('afterprint',()=>div.remove(),{once:true});
- window.print();
- setTimeout(()=>{if(div.isConnected)div.remove()},300000);
+ // Navegadores normalmente usam o título temporário ao sugerir o nome do PDF.
+ // Sem ".pdf" aqui para o navegador adicionar a extensão apenas uma vez.
+ const previousTitle=document.title;
+ document.title=proposalPdfName(m);
+ let restored=false;
+ const finish=()=>{
+   if(restored)return;
+   restored=true;
+   document.title=previousTitle;
+   div.remove();
+ };
+ window.addEventListener('afterprint',finish,{once:true});
+ try{window.print()}catch(error){finish();throw error}
+ setTimeout(finish,300000);
 }
 async function handleAction(el){let action=el.dataset.action,id=el.dataset.id,type=el.dataset.type;switch(action){
  case'nav':state.view=el.dataset.view;state.search='';state.modal=null;state.mobilePanel=null;if(state.view==='recipes'||state.view==='menus')await ensureRecipePhotos();window.scrollTo({top:0,behavior:'instant'});render();break;
